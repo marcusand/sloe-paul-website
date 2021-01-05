@@ -16,7 +16,6 @@ footer {
 }
 
 main {
-  @apply border-white border-2 p-3;
   @apply flex-1;
 }
 
@@ -24,6 +23,29 @@ header,
 main,
 footer {
   @apply w-full;
+}
+
+main,
+.content-container {
+  @apply border-white border-2 p-3;
+}
+
+.content-container {
+  @apply p-4;
+  @apply relative;
+  background-image: linear-gradient(0deg, #eadedb91 0%, #bc70a491 50%, #bfd64191 100%);
+}
+
+.content-container::after {
+  content: "";
+  opacity: 0.8;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  z-index: -1;
+  background-image: url("/img/vogeltapete_jpg_72dpi_klein_korrigiert.jpeg");
 }
 
 .logo {

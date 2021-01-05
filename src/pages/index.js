@@ -1,7 +1,12 @@
+import About from "../components/About";
 import api from "../lib/api";
 
 export default function Index({ pagesData, links }) {
-  return <div>hello world</div>;
+  return (
+    <div className="grid grid-cols-1 gap-4 text-2xl uppercase">
+      <About data={pagesData[0]} />
+    </div>
+  );
 }
 
 export async function getStaticProps() {

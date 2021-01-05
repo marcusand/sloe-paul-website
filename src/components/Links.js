@@ -1,5 +1,4 @@
 export default function Links({ className, links }) {
-  console.log(links);
   return (
     <ul className={`${className} lowercase text-2xl`}>
       {links.map((link) => (
