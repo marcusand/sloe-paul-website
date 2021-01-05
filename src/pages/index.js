@@ -6,8 +6,12 @@ export default function Index({ pagesData, links }) {
 
 export async function getStaticProps() {
   const data = await api.fetchJson("/api/content");
-  const pagesData = data.data.pages;
-  const links = data.data.links;
+
+  let pagesData = data.data.pages;
+  let links = data.data.links;
+
+  pagesData = pagesData.sort((a, b) => a.order - b.order);
+  links = links.sort((a, b) => a.order - b.order);
 
   return {
     props: {
