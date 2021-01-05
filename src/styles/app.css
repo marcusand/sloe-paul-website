@@ -1,27 +1,29 @@
 html,
 body,
 #__next {
-  @apply h-full;
+  @apply h-full w-full;
 }
 
-:root {
-  --header-footer-height: 5%;
+.layout {
+  @apply w-full h-full;
+  @apply flex flex-col;
 }
 
-header {
-  height: var(--header-footer-height);
-}
-
-main {
-  height: calc(100% - 2 * var(--header-footer-height));
-}
-
+header,
 footer {
-  height: var(--header-footer-height);
+  @apply flex-none;
+  @apply h-16;
 }
 
 main {
   @apply border-white border-2 p-3;
+  @apply flex-1;
+}
+
+header,
+main,
+footer {
+  @apply w-full;
 }
 
 .logo {
@@ -30,5 +32,18 @@ main {
 
 .nav li,
 .links li {
-  @apply border-white border-2 px-1;
+  @apply border-white border-2 px-1 float-left;
+}
+
+.nav li {
+  @apply mr-4;
+}
+
+.links li {
+  @apply ml-4;
+}
+
+.mobile-nav,
+.mobile-links {
+  @apply text-center;
 }

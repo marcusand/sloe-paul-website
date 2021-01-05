@@ -5,6 +5,7 @@ module.exports = {
     extend: {
       colors: {
         black: "var(--color-black)",
+        blackTransparent: "var(--color-black-transparent)",
         alpha: "var(--color-alpha)",
       },
       fontSize: {
