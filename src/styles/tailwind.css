@@ -1,5 +1,7 @@
 @import "./colors.css";
 @tailwind base;
 @tailwind components;
+@import "./fonts.css";
+@import "./scrollbar.css";
 @import "./app.css";
 @tailwind utilities;

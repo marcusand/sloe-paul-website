@@ -1,13 +1,6 @@
 :root {
   --color-black: #313131;
-  --color-alpha: #fcfaf7; /* light beige */
-  --color-alpha-transparent: #fcfaf7c8;
-  --color-beta: #eeebe8; /* beige*/
-  --color-gamma: #a4a3a1; /* gray */
-  --color-delta: #86c99a; /* green */
-  --color-delta-light: #96e2ad;
-  --color-epsilon: #8d3333; /* red */
-  --color-epsilon-light: #c43636;
+  --color-alpha: #4a838b;
 
   --scrollbar-background-color: var(--color-beta);
   --scrollbar-thumb-color: var(--color-gamma);
