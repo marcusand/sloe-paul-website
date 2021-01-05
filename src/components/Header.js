@@ -20,7 +20,11 @@ export default function Header({ pages, links }) {
           mobileMenuOpen ? "" : "hidden"
         }`}
       >
-        <Navigation className="mobile-nav" pages={pages} />
+        <Navigation
+          className="mobile-nav"
+          pages={pages}
+          onItemClick={() => setMobileMenuOpen(false)}
+        />
         ---
         <Links className="mobile-links" links={links} />
         ---

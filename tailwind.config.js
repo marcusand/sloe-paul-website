@@ -7,6 +7,7 @@ module.exports = {
         black: "var(--color-black)",
         blackTransparent: "var(--color-black-transparent)",
         alpha: "var(--color-alpha)",
+        beta: "var(--color-beta)",
       },
       fontSize: {
         tiny: "0.65rem",

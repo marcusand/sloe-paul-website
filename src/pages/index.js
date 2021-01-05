@@ -3,7 +3,7 @@ import api from "../lib/api";
 
 export default function Index({ pagesData, links }) {
   return (
-    <div className="grid grid-cols-1 gap-4 text-2xl uppercase">
+    <div>
       <About data={pagesData[0]} />
     </div>
   );
