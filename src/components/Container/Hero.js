@@ -1,7 +1,7 @@
-export default function Hero({ children, className, padding = true }) {
+export default function Hero({ children, className }) {
   return (
     <div
-      className={`content-container mb-4 ${className} ${padding ? "p-4" : "p-0"}`}
+      className={`content-container mb-4 p-0 overflow-hidden ${className}`}
       style={{ height: "26rem" }}
     >
       {children}

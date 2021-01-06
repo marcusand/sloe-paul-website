@@ -20,7 +20,7 @@ export default function LocalizedText({ textDe, textEn }) {
           english
         </Button>
       </div>
-      <div>{isGerman ? textDe : textEn}</div>
+      <div dangerouslySetInnerHTML={{ __html: isGerman ? textDe : textEn }}></div>
     </div>
   );
 }

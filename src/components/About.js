@@ -6,7 +6,7 @@ import Hero from "./Container/Hero";
 export default function About({ data }) {
   return (
     <div id="about">
-      <Hero padding={false}>
+      <Hero>
         <div
           className="h-full w-full"
           style={{

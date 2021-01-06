@@ -5,7 +5,7 @@ import Video from "./Video";
 export default function Videos({ data }) {
   return (
     <div className="my-4" id="videos">
-      <Header>Videos</Header>
+      <Header>{data.title}</Header>
       <Grid>
         {data.mount.map((video) => (
           <Video key={video.id} title={video.title} src={video.video} />

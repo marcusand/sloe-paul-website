@@ -1,4 +1,5 @@
 import About from "../components/About";
+import Live from "../components/Live";
 import Releases from "../components/Releases";
 import Videos from "../components/Videos";
 import api from "../lib/api";
@@ -9,6 +10,7 @@ export default function Index({ pagesData }) {
       <About data={pagesData[0]} />
       <Releases data={pagesData[1]} />
       <Videos data={pagesData[2]} />
+      <Live data={pagesData[3]} />
     </div>
   );
 }

@@ -5,7 +5,7 @@ import Release from "./Release";
 export default function Releases({ data }) {
   return (
     <div className="my-4" id="releases">
-      <Header>Releases</Header>
+      <Header>{data.title}</Header>
       <Grid>
         {data.mount.map((release) => (
           <Release
