@@ -69,3 +69,8 @@ button {
 .mobile-links {
   @apply text-center;
 }
+
+.mobile-nav li,
+.mobile-links li {
+  @apply py-1;
+}

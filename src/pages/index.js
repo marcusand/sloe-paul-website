@@ -1,5 +1,6 @@
 import About from "../components/About";
 import Releases from "../components/Releases";
+import Videos from "../components/Videos";
 import api from "../lib/api";
 
 export default function Index({ pagesData, links }) {
@@ -7,6 +8,7 @@ export default function Index({ pagesData, links }) {
     <div className="text-lg">
       <About data={pagesData[0]} />
       <Releases data={pagesData[1]} />
+      <Videos data={pagesData[2]} />
     </div>
   );
 }

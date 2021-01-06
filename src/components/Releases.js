@@ -2,7 +2,6 @@ import HeaderContainer from "./Container/HeaderContainer";
 import Release from "./Release";
 
 export default function Releases({ data }) {
-  console.log(data);
   return (
     <div className="my-4" id="releases">
       <HeaderContainer>Releases</HeaderContainer>
