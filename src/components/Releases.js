@@ -1,11 +1,12 @@
-import HeaderContainer from "./Container/HeaderContainer";
+import Grid from "./Container/Grid";
+import Header from "./Container/Header";
 import Release from "./Release";
 
 export default function Releases({ data }) {
   return (
     <div className="my-4" id="releases">
-      <HeaderContainer>Releases</HeaderContainer>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+      <Header>Releases</Header>
+      <Grid>
         {data.mount.map((release) => (
           <Release
             key={release.id}
@@ -16,7 +17,7 @@ export default function Releases({ data }) {
             link={release.link}
           />
         ))}
-      </div>
+      </Grid>
     </div>
   );
 }

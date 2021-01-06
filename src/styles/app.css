@@ -31,8 +31,6 @@ main,
 }
 
 .content-container {
-  @apply p-4;
-  @apply relative;
   background: #945858;
   /* background-image: linear-gradient(0deg, var(--color-alpha) 0%, var(--color-beta) 100%); */
 }
