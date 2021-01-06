@@ -4,11 +4,6 @@ body,
   @apply h-full w-full;
 }
 
-.layout {
-  @apply w-full h-full;
-  @apply flex flex-col;
-}
-
 header,
 footer {
   @apply flex-none;
