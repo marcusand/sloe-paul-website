@@ -37,7 +37,7 @@ main,
   /* background-image: linear-gradient(0deg, var(--color-alpha) 0%, var(--color-beta) 100%); */
 }
 
-.content-container::before {
+/* .content-container::before {
   content: "";
   opacity: 0.2;
   top: 0;
@@ -47,7 +47,7 @@ main,
   position: absolute;
   z-index: -1;
   background-image: url("/img/vogeltapete_jpg_72dpi_klein_korrigiert.jpeg");
-}
+} */
 
 button {
   @apply outline-none !important;
