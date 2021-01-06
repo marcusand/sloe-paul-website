@@ -1,10 +1,12 @@
+import Button from "./Button";
+
 export default function Navigation({ pages, className, onItemClick }) {
   return (
-    <ul className={`${className} lowercase text-2xl`}>
+    <ul className={`${className} `}>
       {pages.map((page) => (
         <li key={page.id}>
           <a href={`#${page.slug}`} onClick={() => (onItemClick ? onItemClick() : null)}>
-            {page.title}
+            <Button>{page.title}</Button>
           </a>
         </li>
       ))}

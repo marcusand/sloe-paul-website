@@ -1,6 +1,6 @@
-export default function FullWidthContainer({ children, id }) {
+export default function FullWidthContainer({ children }) {
   return (
-    <div className="content-container h-96 p-0" id={id}>
+    <div className="content-container p-0" style={{ height: "26rem" }}>
       {children}
     </div>
   );

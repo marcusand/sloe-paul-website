@@ -1,12 +1,13 @@
 import ColumnContainer from "./Container/ColumnContainer";
 import ColumnLayout from "./Container/ColumnLayout";
 import FullWidthContainer from "./Container/FullWidthContainer";
+import LocalizedText from "./LocalizedText";
 
 export default function About({ data }) {
   console.log(data);
   return (
-    <div className="grid grid-cols-1 gap-4 text-2xl">
-      <FullWidthContainer id="about">
+    <div className="grid grid-cols-1 gap-4" id="about">
+      <FullWidthContainer>
         <div
           className="h-full w-full"
           style={{
@@ -17,8 +18,8 @@ export default function About({ data }) {
         ></div>
       </FullWidthContainer>
       <ColumnLayout>
-        <ColumnContainer className="md:mr-4 uppercase">
-          {data.about_text_de}
+        <ColumnContainer className="md:mr-4 uppercase mb-4 md:mb-0">
+          <LocalizedText textDe={data.about_text_de} textEn={data.about_text_en} />
         </ColumnContainer>
         <ColumnContainer></ColumnContainer>
       </ColumnLayout>

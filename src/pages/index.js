@@ -1,10 +1,12 @@
 import About from "../components/About";
+import Releases from "../components/Releases";
 import api from "../lib/api";
 
 export default function Index({ pagesData, links }) {
   return (
-    <div>
+    <div className="text-lg">
       <About data={pagesData[0]} />
+      <Releases data={pagesData[1]} />
     </div>
   );
 }
