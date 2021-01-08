@@ -11,7 +11,7 @@ export default function About({ data }) {
         <div
           className="h-full w-full bg-repeat-x"
           style={{
-            background: `url('/img/portrait_klein_center.png')`,
+            background: `url('/img/portrait600.png')`,
             backgroundPosition: "center",
           }}
         ></div>
