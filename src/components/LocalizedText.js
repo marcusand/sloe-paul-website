@@ -6,7 +6,7 @@ export default function LocalizedText({ textDe, textEn }) {
 
   return (
     <div>
-      <div>
+      <div className="mb-1">
         <Button
           onClick={() => setIsGerman(true)}
           className={`mr-4 ${isGerman ? "bg-alpha" : ""}`}
