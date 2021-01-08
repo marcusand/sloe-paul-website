@@ -5,6 +5,7 @@ import Hero from "./Container/Hero";
 import News from "./News";
 
 export default function About({ data }) {
+  console.log(data);
   return (
     <div id="about">
       <Hero>
