@@ -11,7 +11,7 @@ export default function Live({ data }) {
       <Hero>
         <video
           src={data.video.permalink}
-          className="min-h-full min-w-full"
+          className="min-h-full min-w-full opacity-90"
           autoPlay
           loop
           controls={false}

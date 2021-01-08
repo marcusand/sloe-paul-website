@@ -1,18 +1,18 @@
 /*  Firefox */
 * {
-    scrollbar-width: thin;
-    scrollbar-color: white transparent;
+  scrollbar-width: thin;
+  scrollbar-color: inherit transparent;
 }
 
 /* Chrome, Edge, and Safari */
 *::-webkit-scrollbar {
-    width: 5px;
+  width: 5px;
 }
 
 *::-webkit-scrollbar-track {
-    background: transparent;
+  background: transparent;
 }
 
 *::-webkit-scrollbar-thumb {
-    background-color: white;
+  background-color: white;
 }

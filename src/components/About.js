@@ -11,8 +11,7 @@ export default function About({ data }) {
         <div
           className="h-full w-full"
           style={{
-            background: `url(${data.portrait.permalink})`,
-            backgroundSize: "cover",
+            background: `url('/img/portrait.png')`,
             backgroundPosition: "center",
           }}
         ></div>

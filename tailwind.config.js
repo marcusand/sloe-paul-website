@@ -12,6 +12,9 @@ module.exports = {
       fontSize: {
         tiny: "0.65rem",
       },
+      borderWidth: {
+        3: "3px",
+      },
     },
   },
   variants: {
