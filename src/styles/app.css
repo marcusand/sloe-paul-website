@@ -32,7 +32,11 @@ main,
 }
 
 .layout {
-  background-image: url("/img/1.jpeg");
+  @apply bg-center;
+  background-image: url("/img/tapete-bw.jpeg");
+}
+
+main {
   @apply bg-cover;
 }
 
@@ -58,7 +62,7 @@ button {
 }
 
 .logo {
-  @apply text-3xl uppercase;
+  @apply text-black text-3xl uppercase;
 }
 
 .nav li {

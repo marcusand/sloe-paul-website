@@ -9,9 +9,9 @@ export default function About({ data }) {
     <div id="about">
       <Hero>
         <div
-          className="h-full w-full"
+          className="h-full w-full bg-repeat-x"
           style={{
-            background: `url('/img/portrait.png')`,
+            background: `url('/img/portrait_klein_center.png')`,
             backgroundPosition: "center",
           }}
         ></div>

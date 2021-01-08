@@ -1,9 +1,9 @@
 :root {
   --color-black: #000;
   --color-black-transparent: #313131d7;
-  --color-alpha: #75c2b5;
-  --color-beta: #c2757f;
-  /* #c2757f #4a8b70 */
+  --color-alpha: #b1dec1;
+  --color-beta: #fab1c0;
+  /* #c2757f 4a8b70  fcdc98*/
   --scrollbar-background-color: var(--color-beta);
   --scrollbar-thumb-color: var(--color-gamma);
 }

@@ -14,6 +14,7 @@ export default function Live({ data }) {
           className="min-h-full min-w-full opacity-90"
           autoPlay
           loop
+          muted
           controls={false}
         ></video>
       </Hero>

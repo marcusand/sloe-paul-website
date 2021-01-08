@@ -1,7 +1,7 @@
 /*  Firefox */
 * {
   scrollbar-width: thin;
-  scrollbar-color: inherit transparent;
+  scrollbar-color: black transparent;
 }
 
 /* Chrome, Edge, and Safari */
@@ -14,5 +14,5 @@
 }
 
 *::-webkit-scrollbar-thumb {
-  background-color: white;
+  background-color: black;
 }
