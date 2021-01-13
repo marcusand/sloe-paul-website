@@ -21,7 +21,7 @@ export default function About({ data }) {
           <LocalizedText textDe={data.about_text_de} textEn={data.about_text_en} />
         </ContentContainer>
         <ContentContainer>
-          <div className="text-2xl">News</div>
+          <div className="text-2xl">News </div>
           {data.mount
             ? data.mount.map((news, index) => (
                 <div key={news.id}>
