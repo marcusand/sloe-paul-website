@@ -8,7 +8,7 @@ export default function Header({ pages, links }) {
 
   return (
     <header className="flex justify-between items-center">
-      <Navigation className="nav hidden md:block" pages={pages} />
+      <Navigation className="nav hidden md:flex" pages={pages} />
       <div
         className="w-8 fill-current md:hidden"
         dangerouslySetInnerHTML={{ __html: menuIcon }}

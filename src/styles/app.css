@@ -4,6 +4,31 @@ body,
   @apply h-full w-full;
 }
 
+h2 {
+  @apply text-2xl mt-3 !important;
+}
+
+p {
+  @apply my-1 !important;
+}
+
+a {
+  @apply underline font-bold !important;
+}
+
+ul {
+  @apply list-disc list-inside !important;
+}
+
+ol {
+  @apply list-decimal list-inside !important;
+}
+
+li > p {
+  @apply py-0 !important;
+  @apply inline-block;
+}
+
 header,
 footer {
   @apply flex-none;
@@ -65,11 +90,11 @@ button {
   @apply text-black text-3xl uppercase;
 }
 
-.nav li {
+.nav div {
   @apply mr-4 float-left;
 }
 
-.links li {
+.links div {
   @apply ml-4 float-left;
 }
 
@@ -78,7 +103,7 @@ button {
   @apply text-center;
 }
 
-.mobile-nav li,
-.mobile-links li {
+.mobile-nav div,
+.mobile-links div {
   @apply py-1;
 }

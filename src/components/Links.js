@@ -2,14 +2,14 @@ import Button from "./Button";
 
 export default function Links({ className, links }) {
   return (
-    <ul className={`${className}`}>
+    <div className={`${className}`}>
       {links.map((link) => (
-        <li key={link.id}>
+        <div key={link.id}>
           <a href={link.link} target="__blank">
             <Button>{link.title}</Button>
           </a>
-        </li>
+        </div>
       ))}
-    </ul>
+    </div>
   );
 }
