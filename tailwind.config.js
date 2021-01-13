@@ -15,6 +15,9 @@ module.exports = {
       borderWidth: {
         3: "3px",
       },
+      height: {
+        hero: "26rem",
+      },
     },
   },
   variants: {

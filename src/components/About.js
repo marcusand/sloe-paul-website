@@ -7,7 +7,7 @@ import News from "./News";
 export default function About({ data }) {
   return (
     <div id="about">
-      <Hero>
+      <Hero className="h-hero">
         <div
           className="h-full w-full bg-repeat-x"
           style={{
