@@ -28,7 +28,10 @@ export default function Header({ pages, links }) {
         ---
         <Links className="mobile-links" links={links} />
         ---
-        <div className="uppercase text-xl" onClick={() => setMobileMenuOpen(false)}>
+        <div
+          className="uppercase text-xl text-alpha cursor-pointer"
+          onClick={() => setMobileMenuOpen(false)}
+        >
           close
         </div>
       </div>
