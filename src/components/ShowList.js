@@ -12,21 +12,23 @@ export default function ShowList({ shows }) {
       data={shows}
       render={(paginatedData) => (
         <table className="w-full  my-0.5 text-sm xl:text-lg">
-          {paginatedData.map(
-            ({ id, location, city, concert_date, description, tickets_more_infos }) => (
-              <tr key={id}>
-                <td>{getFormattedDate(concert_date)}</td>
-                <td>{city}</td>
-                <td>{location}</td>
-                <td>{description}</td>
-                <td>
-                  <a href={tickets_more_infos} target="__blank">
-                    Tickets/Infos
-                  </a>
-                </td>
-              </tr>
-            ),
-          )}
+          <tbody>
+            {paginatedData.map(
+              ({ id, location, city, concert_date, description, tickets_more_infos }) => (
+                <tr key={id}>
+                  <td>{getFormattedDate(concert_date)}</td>
+                  <td>{city}</td>
+                  <td>{location}</td>
+                  <td>{description}</td>
+                  <td>
+                    <a href={tickets_more_infos} target="__blank">
+                      Tickets/Infos
+                    </a>
+                  </td>
+                </tr>
+              ),
+            )}
+          </tbody>
         </table>
       )}
     />
