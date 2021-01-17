@@ -67,23 +67,12 @@ main {
 
 .content-container {
   background: var(--color-beta);
-  /* background-image: linear-gradient(0deg, var(--color-alpha) 0%, var(--color-beta) 100%); */
 }
 
-/* .content-container::before {
-  content: "";
-  opacity: 0.2;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  position: absolute;
-  z-index: -1;
-  background-image: url("/img/vogeltapete_jpg_72dpi_klein_korrigiert.jpeg");
-} */
-
-button {
+button,
+ul.pagination li {
   @apply outline-none bg-beta !important;
+  @apply border-current border-2 px-1 uppercase hover:bg-alpha cursor-pointer !important;
 }
 
 .logo {
@@ -106,4 +95,25 @@ button {
 .mobile-nav div,
 .mobile-links div {
   @apply py-1;
+}
+
+ul.pagination {
+  @apply w-full text-center !important;
+  @apply list-none !important;
+}
+
+ul.pagination li {
+  @apply inline-block mr-3  !important;
+}
+
+ul.pagination li.active {
+  @apply bg-alpha !important;
+}
+
+ul.pagination li.next {
+  @apply mr-0 !important;
+}
+
+ul.pagination li a {
+  @apply no-underline outline-none !important;
 }
