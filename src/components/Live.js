@@ -18,7 +18,7 @@ export default function Live({ data }) {
   const [pastShows] = useState(showsData.filter((show) => !showIsUpcoming(show)));
 
   return (
-    <div id="live">
+    <div id="live" className="mb-4">
       <Header>{data.title}</Header>
       <Hero>
         <video

@@ -1,4 +1,5 @@
 import About from "../components/About";
+import Imprint from "../components/Imprint";
 import Live from "../components/Live";
 import Releases from "../components/Releases";
 import Videos from "../components/Videos";
@@ -11,6 +12,7 @@ export default function Index({ pagesData }) {
       <Releases data={pagesData[1]} />
       <Videos data={pagesData[2]} />
       <Live data={pagesData[3]} />
+      <Imprint data={pagesData[4]} />
     </div>
   );
 }
