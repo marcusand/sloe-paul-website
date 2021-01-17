@@ -14,7 +14,7 @@ export default function Header({ pages, links }) {
         dangerouslySetInnerHTML={{ __html: menuIcon }}
         onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
       />
-      <div className="logo">Sloe Paul</div>
+      <div className="logo italic">Sloe Paul</div>
       <div
         className={`w-full h-full fixed top-0 left-0 bg-blackTransparent flex flex-col items-center justify-center z-10 ${
           mobileMenuOpen ? "" : "hidden"

@@ -28,7 +28,7 @@ export default function About({ data }) {
           />
         </ContentContainer>
         <ContentContainer>
-          <div className="text-2xl text-center">News</div>
+          <div className="text-2xl text-center italic">News</div>
           <Paginate
             perPage={2}
             data={data.mount ? data.mount : []}
