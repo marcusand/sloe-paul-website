@@ -6,7 +6,7 @@ export default function News({ title, text, image, index }) {
     <div className="overflow-hidden mb-6">
       <div className="w-full">
         <Ticker mode="chain" direction={index % 2 === 0 ? "toLeft" : "toRight"}>
-          {() => <span className="mr-4 italic">{title}</span>}
+          {() => <span className="mr-4">{title}</span>}
         </Ticker>
       </div>
       <div
