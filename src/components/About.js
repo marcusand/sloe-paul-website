@@ -1,21 +1,11 @@
-import ReactPaginate from "react-paginate";
 import ContentContainer from "./Container/ContentContainer";
 import LocalizedText from "./LocalizedText";
 import Grid from "./Container/Grid";
 import Hero from "./Container/Hero";
 import News from "./News";
-import { useState } from "react";
+import Paginate from "./Paginate";
 
 export default function About({ data }) {
-  const perPage = 2;
-  const [newsData, setNewsData] = useState(
-    data.mount ? data.mount.slice(0, perPage) : [],
-  );
-
-  const handlePageClick = ({ selected }) => {
-    setNewsData(data.mount.slice(selected * perPage, selected * perPage + perPage));
-  };
-
   return (
     <div id="about">
       <Hero className="h-hero">
@@ -33,31 +23,24 @@ export default function About({ data }) {
         </ContentContainer>
         <ContentContainer>
           <div className="text-2xl text-center">News</div>
-          {newsData.map((news, index) => (
-            <div key={news.id}>
-              <News
-                title={news.title}
-                text={news.text}
-                image={news.image ? news.image.permalink : null}
-                index={index}
-              />
-              {index + 1 !== data.mount.length ? (
-                <div className="text-center mb-6">---</div>
-              ) : null}
-            </div>
-          ))}
-          <ReactPaginate
-            previousLabel={"<"}
-            nextLabel={">"}
-            breakLabel={"..."}
-            breakClassName={"break-me"}
-            pageCount={Math.ceil(data.mount.length / perPage)}
-            marginPagesDisplayed={5}
-            pageRangeDisplayed={5}
-            onPageChange={handlePageClick}
-            containerClassName={"pagination"}
-            subContainerClassName={"pages pagination"}
-            activeClassName={"active"}
+          <Paginate
+            perPage={2}
+            data={data.mount ? data.mount : []}
+            render={(newsData) => {
+              return newsData.map((news, index) => (
+                <div key={news.id}>
+                  <News
+                    title={news.title}
+                    text={news.text}
+                    image={news.image ? news.image.permalink : null}
+                    index={index}
+                  />
+                  {index + 1 !== newsData.length ? (
+                    <div className="text-center mb-6">---</div>
+                  ) : null}
+                </div>
+              ));
+            }}
           />
         </ContentContainer>
       </Grid>
