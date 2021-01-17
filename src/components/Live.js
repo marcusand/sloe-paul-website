@@ -1,12 +1,21 @@
+import moment from "moment";
 import Header from "./Container/Header";
 import ContentContainer from "./Container/ContentContainer";
 import Hero from "./Container/Hero";
 import Grid from "./Container/Grid";
 import MultipageComponent from "./MultipageComponent";
 import { useState } from "react";
+import ShowList from "./ShowList";
 
 export default function Live({ data }) {
+  const showIsUpcoming = (show) => {
+    return moment(show.concert_date).isAfter(moment());
+  };
+
   const [videoMuted, setVideoMuted] = useState(true);
+  const showsData = data.mount ? data.mount : [];
+  const [upcomingShows] = useState(showsData.filter(showIsUpcoming));
+  const [pastShows] = useState(showsData.filter((show) => !showIsUpcoming(show)));
 
   return (
     <div id="live">
@@ -28,7 +37,13 @@ export default function Live({ data }) {
         </div>
       </Hero>
       <Grid>
-        <ContentContainer>Live:</ContentContainer>
+        <ContentContainer>
+          <MultipageComponent
+            data={[upcomingShows, pastShows.reverse()]}
+            buttonLables={["upcoming shows", "past shows"]}
+            render={(shows) => <ShowList shows={shows} />}
+          />
+        </ContentContainer>
         <ContentContainer>
           <MultipageComponent
             data={[data.description_de, data.description_en]}

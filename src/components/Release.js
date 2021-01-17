@@ -1,6 +1,6 @@
 import ContentContainer from "./Container/ContentContainer";
 
-export default function Release({ id, title, description, image, link }) {
+export default function Release({ title, description, image, link }) {
   return (
     <ContentContainer>
       <div className="w-full h-full flex flex-col md:flex-row">

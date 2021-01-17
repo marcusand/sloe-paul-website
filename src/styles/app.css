@@ -29,6 +29,24 @@ li > p {
   @apply inline-block;
 }
 
+table {
+  @apply table-fixed;
+}
+
+table tr {
+  border-bottom: 1px solid black;
+  border-collapse: collapse;
+}
+
+table td {
+  @apply p-1 text-left;
+  @apply break-words !important;
+}
+
+table td a {
+  @apply break-words !important;
+}
+
 header,
 footer {
   @apply flex-none;
@@ -98,12 +116,12 @@ ul.pagination li {
 }
 
 ul.pagination {
-  @apply w-full text-center !important;
+  @apply w-full text-center mt-3 !important;
   @apply list-none !important;
 }
 
 ul.pagination li {
-  @apply inline-block mr-3  !important;
+  @apply inline-block mr-3 p-0 !important;
 }
 
 ul.pagination li.active {
@@ -115,5 +133,5 @@ ul.pagination li.next {
 }
 
 ul.pagination li a {
-  @apply no-underline outline-none !important;
+  @apply no-underline outline-none px-2 !important;
 }
