@@ -9,7 +9,7 @@ export default function Hero({ children, className }) {
 
   const randomTimeout = () => Math.random() * 30000;
 
-  const addBird = () => {
+  const addBird = (startTimeout = true) => {
     const birdsCopy = Object.assign([], birdsRef.current);
     const newBird = {
       index: Date.now(),
@@ -24,7 +24,7 @@ export default function Hero({ children, className }) {
     birdsCopy.push(newBird);
     birdsRef.current = birdsCopy;
     setBirdsData(birdsRef.current);
-    setTimeout(addBird, randomTimeout());
+    if (startTimeout) setTimeout(addBird, randomTimeout());
   };
 
   const handleAnimationEnded = (index) => {
@@ -40,6 +40,12 @@ export default function Hero({ children, className }) {
   useEffect(() => {
     addBird();
     setTimeout(addBird, randomTimeout());
+
+    containerRef.current.addEventListener("click", () => {
+      for (let index = 0; index < 5; index++) {
+        addBird(false);
+      }
+    });
   }, []);
 
   useEffect(() => {
