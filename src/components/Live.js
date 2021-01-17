@@ -2,7 +2,7 @@ import Header from "./Container/Header";
 import ContentContainer from "./Container/ContentContainer";
 import Hero from "./Container/Hero";
 import Grid from "./Container/Grid";
-import LocalizedText from "./LocalizedText";
+import MultipageComponent from "./MultipageComponent";
 import { useState } from "react";
 
 export default function Live({ data }) {
@@ -30,7 +30,13 @@ export default function Live({ data }) {
       <Grid>
         <ContentContainer>Live:</ContentContainer>
         <ContentContainer>
-          <LocalizedText textDe={data.description_de} textEn={data.description_en} />
+          <MultipageComponent
+            data={[data.description_de, data.description_en]}
+            buttonLables={["deutsch", "english"]}
+            render={(currentData) => (
+              <div dangerouslySetInnerHTML={{ __html: currentData }} />
+            )}
+          />
         </ContentContainer>
       </Grid>
     </div>

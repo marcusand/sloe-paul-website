@@ -1,5 +1,5 @@
 import ContentContainer from "./Container/ContentContainer";
-import LocalizedText from "./LocalizedText";
+import MultipageComponent from "./MultipageComponent";
 import Grid from "./Container/Grid";
 import Hero from "./Container/Hero";
 import News from "./News";
@@ -19,7 +19,13 @@ export default function About({ data }) {
       </Hero>
       <Grid>
         <ContentContainer>
-          <LocalizedText textDe={data.about_text_de} textEn={data.about_text_en} />
+          <MultipageComponent
+            data={[data.about_text_de, data.about_text_en]}
+            buttonLables={["deutsch", "english"]}
+            render={(currentData) => (
+              <div dangerouslySetInnerHTML={{ __html: currentData }} />
+            )}
+          />
         </ContentContainer>
         <ContentContainer>
           <div className="text-2xl text-center">News</div>
