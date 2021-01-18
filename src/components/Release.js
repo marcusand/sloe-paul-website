@@ -10,9 +10,6 @@ export default function Release({ title, description, image, link }) {
         <div className="w-1/2 md:ml-4 md:px-4 mt-1 md:mt-0">
           <div className="text-2xl">{title}</div>
           <div dangerouslySetInnerHTML={{ __html: description }} />
-          <a href={link} target="__blank" className="underline">
-            buy
-          </a>
         </div>
       </div>
     </ContentContainer>
