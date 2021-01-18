@@ -1,14 +1,14 @@
 import moment from "moment";
 import Paginate from "./Paginate";
 
-export default function ShowList({ shows }) {
+export default function ShowList({ shows, perPage }) {
   const getFormattedDate = (dateString) => {
     return moment(dateString).format("DD.MM.YYYY HH:mm");
   };
 
   return (
     <Paginate
-      perPage={4}
+      perPage={perPage}
       data={shows}
       render={(paginatedData) => (
         <table className="w-full  my-0.5 text-sm xl:text-lg">
