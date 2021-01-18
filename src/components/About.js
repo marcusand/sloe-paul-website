@@ -8,14 +8,25 @@ import Paginate from "./Paginate";
 export default function About({ data }) {
   return (
     <div id="about">
-      <Hero className="h-hero">
+      <Hero className="h-hero flex flex-col md:flex-row">
         <div
-          className="h-full w-full bg-repeat-x"
+          className="h-full w-full md:w-1/2 xl:w-1/3 flex justify-center items-center opacity-60 uppercase"
+          style={{ fontSize: "9rem" }}
+        >
+          Sloe
+        </div>
+        <div
+          className="h-full w-full xl:w-1/3 absolute xl:relative top-0 left-0 z-10 bg-cover"
           style={{
             background: `url('/img/portrait600.png')`,
-            backgroundPosition: "center",
           }}
         ></div>
+        <div
+          className="h-full w-full md:w-1/2 xl:w-1/3 flex justify-center items-center opacity-60 uppercase"
+          style={{ fontSize: "9rem" }}
+        >
+          Paul
+        </div>
       </Hero>
       <Grid>
         <ContentContainer>
@@ -28,7 +39,7 @@ export default function About({ data }) {
           />
         </ContentContainer>
         <ContentContainer>
-          <div className="text-2xl text-center italic underline">News</div>
+          <div className="text-2xl text-center italic underline uppercase">News</div>
           <Paginate
             perPage={data.per_page}
             data={data.mount ? data.mount : []}
