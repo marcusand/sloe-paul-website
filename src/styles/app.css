@@ -30,7 +30,7 @@ li > p {
 }
 
 table {
-  @apply table-fixed;
+  @apply lg:table-auto table-fixed;
 }
 
 table tr {

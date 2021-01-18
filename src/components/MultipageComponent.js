@@ -22,7 +22,7 @@ export default function MultipageComponent({
           </Button>
         ))}
       </div>
-      {render(data[currentIndex])}
+      {render(data[currentIndex], currentIndex)}
     </div>
   );
 }
