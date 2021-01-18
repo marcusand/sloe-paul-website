@@ -41,7 +41,7 @@ export default function Live({ data }) {
           <MultipageComponent
             data={[upcomingShows, pastShows.reverse()]}
             buttonLables={["upcoming shows", "past shows"]}
-            render={(shows) => <ShowList shows={shows} />}
+            render={(shows) => <ShowList shows={shows} perPage={data.perPage} />}
           />
         </ContentContainer>
         <ContentContainer>

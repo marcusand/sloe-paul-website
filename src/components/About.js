@@ -30,7 +30,7 @@ export default function About({ data }) {
         <ContentContainer>
           <div className="text-2xl text-center italic underline">News</div>
           <Paginate
-            perPage={2}
+            perPage={data.per_page}
             data={data.mount ? data.mount : []}
             render={(newsData) => {
               return newsData.map((news, index) => (
