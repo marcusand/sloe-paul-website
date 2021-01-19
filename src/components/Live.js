@@ -39,10 +39,10 @@ export default function Live({ data }) {
       <Grid>
         <ContentContainer>
           <MultipageComponent
-            data={[upcomingShows, pastShows.reverse()]}
+            data={[upcomingShows.reverse(), pastShows]}
             buttonLables={["upcoming shows", "past shows"]}
             render={(shows, index) => (
-              <ShowList shows={shows} perPage={data.perPage} pastShows={index === 1} />
+              <ShowList shows={shows} perPage={data.per_page} pastShows={index === 1} />
             )}
           />
         </ContentContainer>
