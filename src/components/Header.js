@@ -16,7 +16,7 @@ export default function Header({ pages, links }) {
       />
       <div className="logo">Sloe Paul</div>
       <div
-        className={`w-full h-full fixed top-0 left-0 bg-blackTransparent flex flex-col items-center justify-center z-10 ${
+        className={`w-full h-full fixed top-0 left-0 bg-blackTransparent flex flex-col items-center justify-center z-50 ${
           mobileMenuOpen ? "" : "hidden"
         }`}
       >

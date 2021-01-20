@@ -130,6 +130,13 @@ ul.pagination li {
   @apply py-1;
 }
 
+.nav button,
+.links button,
+.mobile-nav button,
+.mobile-links button {
+  min-width: 5.5rem;
+}
+
 ul.pagination {
   @apply w-full text-center mt-3 !important;
   @apply list-none !important;
