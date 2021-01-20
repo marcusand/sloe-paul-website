@@ -17,11 +17,11 @@ export default function Hero({ children, className }) {
     const birdsCopy = Object.assign([], birdsRef.current);
     const newBird = {
       index: Date.now(),
-      width: helpers.getRandomArbitrary(90, 300),
+      width: helpers.getRandomArbitrary(50, 150),
       fromLeft: Math.random() > 0.5,
       speed: helpers.getRandomArbitrary(0.15, 0.5),
       y: Math.round(
-        helpers.getRandomArbitrary(0, containerRef.current.offsetHeight * 0.9),
+        helpers.getRandomArbitrary(0, containerRef.current.offsetHeight * 0.8),
       ),
     };
 

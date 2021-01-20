@@ -16,7 +16,7 @@ export default function About({ data }) {
           Sloe
         </div>
         <div
-          className="h-full w-full xl:w-1/3 absolute xl:relative top-0 left-0 z-10 bg-center bg-no-repeat xl:bg-cover "
+          className="h-full w-full xl:w-1/3 absolute xl:relative top-0 left-0 z-20 bg-center bg-no-repeat xl:bg-cover "
           style={{
             background: `url('/img/portrait600.png')`,
           }}

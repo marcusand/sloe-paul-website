@@ -5,8 +5,8 @@ import Header from "./Header";
 export default function Layout({ pagesData, links, children }) {
   const [showAnimation, setShowAnimation] = useState(false);
   const [clickCoords, setClickCoords] = useState();
-  const offset = [-45, -20];
-  const animationLength = 500;
+  const offset = [-35, -20];
+  const animationLength = 550;
 
   useEffect(() => {
     const body = document.querySelector("body");
@@ -24,16 +24,6 @@ export default function Layout({ pagesData, links, children }) {
     setTimeout(() => setShowAnimation(false), animationLength);
   }, [clickCoords]);
 
-  useEffect(() => {
-    const body = document.querySelector("body");
-
-    if (showAnimation) {
-      body.style.cursor = "none";
-    } else {
-      body.style.cursor = "default";
-    }
-  }, [showAnimation]);
-
   if (!pagesData) return null;
   return (
     <div className="layout w-full h-full flex flex-col px-1 pb-1 md:pb-0 md:px-4 ">
@@ -42,8 +32,8 @@ export default function Layout({ pagesData, links, children }) {
       <Footer links={links} />
       {showAnimation ? (
         <img
-          src="/animations/plant.png"
-          className="fixed top-0 left-0 w-24"
+          src="/animations/plant.gif"
+          className="fixed top-0 left-0 w-16 z-50"
           style={{
             transform: `translate(${clickCoords[0] + offset[0]}px, ${
               clickCoords[1] + offset[1]

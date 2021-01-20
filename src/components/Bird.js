@@ -34,12 +34,14 @@ export default function Bird({ width, fromLeft, speed, index, y, onAnimationEnde
 
   return (
     <div
-      className={`absolute top-0 ${fromLeft ? "left-0" : "right-0"}`}
+      className={`absolute top-0 ${fromLeft ? "left-0" : "right-0"} ${
+        width < 100 ? "z-10" : "z-30"
+      }`}
       ref={container}
       style={{ transform: `translateX(${offset}px)` }}
     >
       <img
-        src="animations/bird.png"
+        src="animations/bird.gif"
         style={{ width: `${width}px`, transform: `scaleX(${fromLeft ? "-1" : "1"})` }}
       />
     </div>
