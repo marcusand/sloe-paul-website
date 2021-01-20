@@ -2,9 +2,11 @@ import React, { useEffect, useState } from "react";
 import Footer from "./Footer";
 import Header from "./Header";
 
+const plantGifSrc = "/animations/plant.gif";
+
 export default function Layout({ pagesData, links, children }) {
-  const [showAnimation, setShowAnimation] = useState(false);
   const [clickCoords, setClickCoords] = useState();
+  const [src, setSrc] = useState(plantGifSrc);
   const offset = [-35, -20];
   const animationLength = 550;
 
@@ -19,9 +21,8 @@ export default function Layout({ pagesData, links, children }) {
   useEffect(() => {
     if (!clickCoords) return;
 
-    setShowAnimation(true);
-
-    setTimeout(() => setShowAnimation(false), animationLength);
+    setSrc(plantGifSrc);
+    setTimeout(() => setSrc(null), animationLength);
   }, [clickCoords]);
 
   if (!pagesData) return null;
@@ -30,9 +31,9 @@ export default function Layout({ pagesData, links, children }) {
       <Header pages={pagesData} links={links} />
       <main className="overflow-y-scroll overflow-x-hidden">{children}</main>
       <Footer links={links} />
-      {showAnimation ? (
+      {clickCoords ? (
         <img
-          src="/animations/plant.gif"
+          src={src}
           className="fixed top-0 left-0 w-16 z-50"
           style={{
             transform: `translate(${clickCoords[0] + offset[0]}px, ${
