@@ -48,8 +48,8 @@ export default function Live({ data }) {
         </ContentContainer>
         <ContentContainer>
           <MultipageComponent
-            data={[data.description_de, data.description_en]}
-            buttonLables={["deutsch", "english"]}
+            data={[data.description_en, data.description_de]}
+            buttonLables={["english", "deutsch"]}
             render={(currentData) => (
               <div dangerouslySetInnerHTML={{ __html: currentData }} />
             )}

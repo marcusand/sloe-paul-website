@@ -32,8 +32,8 @@ export default function About({ data }) {
         <div className="order-2 xl:order-1">
           <ContentContainer>
             <MultipageComponent
-              data={[data.about_text_de, data.about_text_en]}
-              buttonLables={["deutsch", "english"]}
+              data={[data.about_text_en, data.about_text_de]}
+              buttonLables={["english", "deutsch"]}
               render={(currentData) => (
                 <div dangerouslySetInnerHTML={{ __html: currentData }} />
               )}
