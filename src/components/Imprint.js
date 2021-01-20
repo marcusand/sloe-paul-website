@@ -13,7 +13,7 @@ export default function Imprint({ data }) {
           />
           <div
             dangerouslySetInnerHTML={{ __html: data.text_right }}
-            className="mt-4 xl:mt-0 xl:w-1/2"
+            className="mt-0 xl:mt-0 xl:w-1/2 xl:ml-12"
           />
         </div>
       </ContentContainer>
