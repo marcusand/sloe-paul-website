@@ -9,10 +9,7 @@ export default function About({ data }) {
   return (
     <div id="about">
       <Hero className="h-hero flex flex-col md:flex-row">
-        <div
-          className="h-full w-full md:w-1/2 xl:w-1/3 flex justify-center items-center opacity-60 uppercase"
-          style={{ fontSize: "9rem" }}
-        >
+        <div className="logo" style={{ fontSize: "9rem" }}>
           Sloe
         </div>
         <div
@@ -21,10 +18,7 @@ export default function About({ data }) {
             background: `url('/img/portrait600.png')`,
           }}
         ></div>
-        <div
-          className="h-full w-full md:w-1/2 xl:w-1/3 flex justify-center items-center opacity-60 uppercase"
-          style={{ fontSize: "9rem" }}
-        >
+        <div className="logo" style={{ fontSize: "9rem" }}>
           Paul
         </div>
       </Hero>
