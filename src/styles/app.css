@@ -70,6 +70,7 @@ footer {
 
 main {
   @apply flex-1;
+  scroll-behavior: smooth !important;
 }
 
 header,
