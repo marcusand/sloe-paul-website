@@ -29,37 +29,41 @@ export default function About({ data }) {
         </div>
       </Hero>
       <Grid>
-        <ContentContainer>
-          <MultipageComponent
-            data={[data.about_text_de, data.about_text_en]}
-            buttonLables={["deutsch", "english"]}
-            render={(currentData) => (
-              <div dangerouslySetInnerHTML={{ __html: currentData }} />
-            )}
-          />
-        </ContentContainer>
-        <ContentContainer>
-          <div className="text-2xl text-center italic underline uppercase">News</div>
-          <Paginate
-            perPage={data.per_page}
-            data={data.mount ? data.mount : []}
-            render={(newsData) => {
-              return newsData.map((news, index) => (
-                <div key={news.id}>
-                  <News
-                    title={news.title}
-                    text={news.text}
-                    image={news.image ? news.image.permalink : null}
-                    index={index}
-                  />
-                  {index + 1 !== newsData.length ? (
-                    <div className="text-center mb-6">---</div>
-                  ) : null}
-                </div>
-              ));
-            }}
-          />
-        </ContentContainer>
+        <div className="order-2 xl:order-1">
+          <ContentContainer>
+            <MultipageComponent
+              data={[data.about_text_de, data.about_text_en]}
+              buttonLables={["deutsch", "english"]}
+              render={(currentData) => (
+                <div dangerouslySetInnerHTML={{ __html: currentData }} />
+              )}
+            />
+          </ContentContainer>
+        </div>
+        <div className="order-1">
+          <ContentContainer>
+            <div className="text-2xl text-center italic underline uppercase">News</div>
+            <Paginate
+              perPage={data.per_page}
+              data={data.mount ? data.mount : []}
+              render={(newsData) => {
+                return newsData.map((news, index) => (
+                  <div key={news.id}>
+                    <News
+                      title={news.title}
+                      text={news.text}
+                      image={news.image ? news.image.permalink : null}
+                      index={index}
+                    />
+                    {index + 1 !== newsData.length ? (
+                      <div className="text-center mb-6">---</div>
+                    ) : null}
+                  </div>
+                ));
+              }}
+            />
+          </ContentContainer>
+        </div>
       </Grid>
     </div>
   );
