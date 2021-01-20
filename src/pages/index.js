@@ -1,3 +1,4 @@
+import Head from "next/head";
 import About from "../components/About";
 import Imprint from "../components/Imprint";
 import Live from "../components/Live";
@@ -8,6 +9,17 @@ import api from "../lib/api";
 export default function Index({ pagesData }) {
   return (
     <div className="text-lg">
+      <Head>
+        <title>Sloe Paul</title>
+        <meta property="og:title" content="Sloe Paul" key="title" />
+        <meta
+          name="keywords"
+          content="Sloe Paul, Stuttgart, Schorndorf, Berlin, Leipzig, Band, Music, Recording, Album, Concert, Live, Release, Pop, Lo-fi"
+        />
+        <meta name="description" content="Homepage of musician Sloe Paul" />
+        <meta name="author" content="Marcus Schreiter" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      </Head>
       <About data={pagesData[0]} />
       <Releases data={pagesData[1]} />
       <Videos data={pagesData[2]} />
