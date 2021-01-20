@@ -47,6 +47,11 @@ export default function Hero({ children, className }) {
     containerRef.current.addEventListener("click", () => {
       addBird(false);
     });
+
+    window.addEventListener("blur", () => {
+      setBirdsData([]);
+      birdsRef.current = [];
+    });
   }, []);
 
   useEffect(() => {
