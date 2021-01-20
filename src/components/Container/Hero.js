@@ -19,7 +19,7 @@ export default function Hero({ children, className }) {
       index: Date.now(),
       width: helpers.getRandomArbitrary(90, 300),
       fromLeft: Math.random() > 0.5,
-      speed: helpers.getRandomArbitrary(0.1, 0.5),
+      speed: helpers.getRandomArbitrary(0.15, 0.5),
       y: Math.round(
         helpers.getRandomArbitrary(0, containerRef.current.offsetHeight * 0.9),
       ),
@@ -42,13 +42,10 @@ export default function Hero({ children, className }) {
   };
 
   useEffect(() => {
-    addBird();
     setTimeout(addBird, randomTimeout());
 
     containerRef.current.addEventListener("click", () => {
-      for (let index = 0; index < 5; index++) {
-        addBird(false);
-      }
+      addBird(false);
     });
   }, []);
 
