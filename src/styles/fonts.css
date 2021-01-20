@@ -1,16 +1,18 @@
 @font-face {
   font-family: "Erika";
-  src: url("/fonts/ERIKALatin1-Regular.ttf") format("truetype");
+  src: local("Erika Regular"), url("/fonts/ERIKALatin1-Regular.ttf") format("truetype");
+  font-display: swap;
 }
 
 @font-face {
   font-family: "Erika";
-  src: url("/fonts/G2Erika.ttf") format("truetype");
+  src: local("Erika Italic"), url("/fonts/G2Erika.ttf") format("truetype");
   font-style: italic;
+  font-display: swap;
 }
 
 html {
-  font-family: "Erika" !important;
+  font-family: "Erika", sans-serif !important;
 }
 
 main {
