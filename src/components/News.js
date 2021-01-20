@@ -1,5 +1,5 @@
-import ShowMoreText from "react-show-more-text";
 import Ticker from "react-ticker";
+import Image from "next/image";
 
 export default function News({ title, text, image, index }) {
   return (
@@ -9,13 +9,15 @@ export default function News({ title, text, image, index }) {
           {() => <span className="mr-4">{title}</span>}
         </Ticker>
       </div>
-      <div
-        className="h-64 flex justify-center my-4 bg-contain bg-center"
-        style={{ backgroundImage: `url(${image})` }}
-      />
-      <ShowMoreText anchorClass="underline">
-        <div dangerouslySetInnerHTML={{ __html: text }} />
-      </ShowMoreText>
+      <div className="h-72 w-full overflow-hidden relative my-4 bg-black">
+        <Image
+          src={image}
+          layout="fill"
+          objectFit="scale-down"
+          objectPosition="center center"
+        />
+      </div>
+      <div dangerouslySetInnerHTML={{ __html: text }} />
     </div>
   );
 }

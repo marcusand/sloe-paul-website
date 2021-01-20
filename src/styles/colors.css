@@ -2,6 +2,7 @@
   --color-black: #000;
   --color-black-transparent: #313131d7;
   --color-alpha: #b1dec1;
+  --color-alpha-dark: #4bb470;
   --color-beta: #fab1c0;
   /* #c2757f 4a8b70  fcdc98*/
   --scrollbar-background-color: var(--color-beta);

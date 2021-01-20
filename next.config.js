@@ -87,7 +87,12 @@ const withNoXPoweredByHeader = (config = {}) => ({ ...config, poweredByHeader: f
 const withImageDomain = (config = {}) => ({
   ...config,
   images: {
-    domains: ["localhost", "edit.drm.meso.design", "edit.drm.test"],
+    domains: [
+      "localhost",
+      "sloe-paul.test",
+      "sloepaul.marcusand.de",
+      "edit.sloepaul.net",
+    ],
   },
 });
 

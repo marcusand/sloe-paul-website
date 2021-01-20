@@ -7,6 +7,7 @@ module.exports = {
         black: "var(--color-black)",
         blackTransparent: "var(--color-black-transparent)",
         alpha: "var(--color-alpha)",
+        alphaDark: "var(--color-alpha-dark)",
         beta: "var(--color-beta)",
       },
       fontSize: {

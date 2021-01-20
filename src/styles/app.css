@@ -9,11 +9,26 @@ h2 {
 }
 
 p {
-  @apply my-1 !important;
+  @apply my-2 !important;
 }
 
 a {
-  @apply underline font-bold !important;
+  @apply underline !important;
+}
+
+strong {
+  @apply font-normal !important;
+}
+
+a,
+strong {
+  @apply text-alphaDark !important;
+}
+
+header a,
+footer a,
+.pagination a {
+  @apply text-black !important;
 }
 
 ul {
