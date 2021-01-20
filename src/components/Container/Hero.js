@@ -2,6 +2,8 @@ import { useEffect, useRef, useState } from "react";
 import helpers from "../../lib/helpers";
 import Bird from "../Bird";
 
+const MAX_BIRDS = 20;
+
 export default function Hero({ children, className }) {
   const [birdsData, setBirdsData] = useState([]);
   const birdsRef = useRef([]);
@@ -10,6 +12,8 @@ export default function Hero({ children, className }) {
   const randomTimeout = () => Math.random() * 30000;
 
   const addBird = (startTimeout = true) => {
+    if (birdsRef.current.length > MAX_BIRDS) return;
+
     const birdsCopy = Object.assign([], birdsRef.current);
     const newBird = {
       index: Date.now(),
