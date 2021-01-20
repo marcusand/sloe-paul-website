@@ -9,7 +9,7 @@ export default function About({ data }) {
   return (
     <div id="about">
       <Hero className="h-hero flex flex-col md:flex-row">
-        <div className="logo" style={{ fontSize: "9rem" }}>
+        <div className="hero-title" style={{ fontSize: "9rem" }}>
           Sloe
         </div>
         <div
@@ -18,7 +18,7 @@ export default function About({ data }) {
             background: `url('/img/portrait600.png')`,
           }}
         ></div>
-        <div className="logo" style={{ fontSize: "9rem" }}>
+        <div className="hero-title" style={{ fontSize: "9rem" }}>
           Paul
         </div>
       </Hero>
