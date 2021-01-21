@@ -16,7 +16,7 @@ export default function News({ title, text, image, index }) {
           layout="fill"
           objectFit="scale-down"
           objectPosition="center center"
-          sizes="50vw"
+          sizes="(min-width: 1200px) 25vw, 100vw"
           quality={50}
         />
       </div>
