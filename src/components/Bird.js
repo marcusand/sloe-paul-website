@@ -43,6 +43,7 @@ export default function Bird({ width, fromLeft, speed, index, y, onAnimationEnde
       <img
         src="animations/bird.gif"
         style={{ width: `${width}px`, transform: `scaleX(${fromLeft ? "-1" : "1"})` }}
+        alt="Bird"
       />
     </div>
   );

@@ -12,6 +12,7 @@ export default function News({ title, text, image, index }) {
       <div className="h-72 w-full overflow-hidden relative my-4 bg-black">
         <Image
           src={image}
+          alt={`News header image for article: ${title}`}
           layout="fill"
           objectFit="scale-down"
           objectPosition="center center"
