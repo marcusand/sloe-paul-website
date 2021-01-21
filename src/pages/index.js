@@ -30,8 +30,13 @@ export default function Index({ pagesData }) {
         <meta name="msapplication-config" content="/icon/browserconfig.xml" />
         <meta name="theme-color" content="#fab1c0" />
 
-        <link rel="preload" href="/fonts/G2Erika.ttf" as="font" crossOrigin />
-        <link rel="preload" href="/fonts/ERIKALatin1-Regular.ttf" as="font" crossOrigin />
+        <link rel="preload" href="/fonts/G2Erika.ttf" as="font" crossOrigin="anonymous" />
+        <link
+          rel="preload"
+          href="/fonts/ERIKALatin1-Regular.ttf"
+          as="font"
+          crossOrigin="anonymous"
+        />
       </Head>
       <About data={pagesData[0]} />
       <Releases data={pagesData[1]} />
