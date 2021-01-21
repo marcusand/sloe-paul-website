@@ -40,7 +40,6 @@ export default function Layout({ pagesData, links, children }) {
               clickCoords[1] + offset[1]
             }px)`,
           }}
-          alt="Plant"
         />
       ) : null}
     </div>
