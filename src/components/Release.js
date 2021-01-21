@@ -1,7 +1,7 @@
 import Image from "next/image";
 import ContentContainer from "./Container/ContentContainer";
 
-export default function Release({ title, description, image, link }) {
+export default function Release({ title, description, image }) {
   return (
     <ContentContainer>
       <div className="w-full h-full flex flex-col md:flex-row">
