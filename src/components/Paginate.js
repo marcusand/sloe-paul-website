@@ -22,7 +22,7 @@ export default function Paginate({ perPage, data, render }) {
         marginPagesDisplayed={5}
         pageRangeDisplayed={5}
         onPageChange={handlePageClick}
-        containerClassName={"pagination"}
+        containerClassName={"pagination text-sm md:text-lg"}
         subContainerClassName={"pages pagination"}
         activeClassName={"active"}
       />
