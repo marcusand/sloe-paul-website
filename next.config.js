@@ -96,6 +96,14 @@ const withImageDomain = (config = {}) => ({
   },
 });
 
+const withI18n = (config = {}) => ({
+  ...config,
+  i18n: {
+    locales: ["en-US"],
+    defaultLocale: "en-US",
+  },
+});
+
 const nextConfig = withPlugins([
   withSourceMaps(),
   withPrettier,
@@ -104,6 +112,7 @@ const nextConfig = withPlugins([
   withUrlLoader,
   withNoXPoweredByHeader,
   withImageDomain,
+  withI18n,
 ]);
 
 module.exports = nextConfig;
