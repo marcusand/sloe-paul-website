@@ -8,6 +8,7 @@ export default function Navigation({ pages, className, onItemClick }) {
           <a
             href={page.external_url ? page.external_url : `#${page.slug}`}
             target={page.external_url ? "__blank" : ""}
+            rel={page.external_url ? "noopener" : ""}
             onClick={() => (onItemClick ? onItemClick() : null)}
           >
             <Button>{page.title}</Button>

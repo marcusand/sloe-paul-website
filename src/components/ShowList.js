@@ -23,7 +23,7 @@ export default function ShowList({ shows, perPage, pastShows = false }) {
                   {pastShows ? null : (
                     <td>
                       {tickets_more_infos ? (
-                        <a href={tickets_more_infos} target="__blank">
+                        <a href={tickets_more_infos} target="__blank" rel="noopener">
                           Tickets/Info
                         </a>
                       ) : null}
