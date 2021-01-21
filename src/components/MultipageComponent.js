@@ -10,7 +10,7 @@ export default function MultipageComponent({
   const [currentIndex, setCurrentIndex] = useState(initialIndex);
 
   return (
-    <div className="w-full h-full flex flex-col">
+    <div className="w-full h-full flex flex-col text-sm md:text-lg">
       <div className="mb-1">
         {buttonLables.map((label, index) => (
           <Button

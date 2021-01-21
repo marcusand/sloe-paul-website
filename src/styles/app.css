@@ -14,6 +14,8 @@ p {
 
 a {
   @apply underline !important;
+  @apply whitespace-pre-wrap !important;
+  word-wrap: break-word;
 }
 
 strong {
