@@ -15,6 +15,7 @@ p {
 a {
   @apply underline !important;
   @apply whitespace-pre-wrap !important;
+  word-break: break-word;
   @apply hover:text-white !important;
 }
 
