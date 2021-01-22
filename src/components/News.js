@@ -16,8 +16,7 @@ export default function News({ title, text, image, index }) {
           layout="fill"
           objectFit="scale-down"
           objectPosition="center center"
-          sizes="(min-width: 1200px) 25vw, 100vw"
-          quality={50}
+          sizes="(min-width: 1200px) 40vw, 100vw"
         />
       </div>
       <div dangerouslySetInnerHTML={{ __html: text }} />
