@@ -13,7 +13,7 @@ export default function Release({ title, description, image }) {
             alt={`Cover of the album ${title}`}
           />
         </div>
-        <div className="w-1/2 md:ml-4 md:px-4 mt-1 md:mt-0">
+        <div className="w-full md:w-1/2 md:ml-4 md:px-4 mt-1 md:mt-0">
           <h2>{title}</h2>
           <div dangerouslySetInnerHTML={{ __html: description }} />
         </div>
