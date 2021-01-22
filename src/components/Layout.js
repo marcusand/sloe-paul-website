@@ -8,12 +8,12 @@ export default function Layout({ pagesData, links, children }) {
   const [clickCoords, setClickCoords] = useState();
   const [src, setSrc] = useState(plantGifSrc);
   const offset = [-35, -20];
-  const animationLength = 550;
 
   useEffect(() => {
     const body = document.querySelector("body");
 
     body.addEventListener("click", (e) => {
+      console.log(e.target);
       setClickCoords([e.clientX, e.clientY]);
     });
   }, []);
@@ -21,8 +21,8 @@ export default function Layout({ pagesData, links, children }) {
   useEffect(() => {
     if (!clickCoords) return;
 
-    setSrc(plantGifSrc);
-    setTimeout(() => setSrc(null), animationLength);
+    setSrc(null);
+    setTimeout(() => setSrc(plantGifSrc), 0);
   }, [clickCoords]);
 
   if (!pagesData) return null;
@@ -34,7 +34,7 @@ export default function Layout({ pagesData, links, children }) {
       {clickCoords ? (
         <img
           src={src}
-          className="fixed top-0 left-0 w-16 z-50"
+          className="fixed top-0 left-0 w-16 z-50 pointer-events-none"
           style={{
             transform: `translate(${clickCoords[0] + offset[0]}px, ${
               clickCoords[1] + offset[1]

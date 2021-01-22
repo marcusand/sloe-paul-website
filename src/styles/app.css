@@ -136,7 +136,7 @@ ul.pagination li {
 .links button,
 .mobile-nav button,
 .mobile-links button {
-  min-width: 5.5rem;
+  min-width: 5rem;
 }
 
 ul.pagination {
