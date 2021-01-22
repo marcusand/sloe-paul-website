@@ -15,7 +15,11 @@ p {
 a {
   @apply underline !important;
   @apply whitespace-pre-wrap !important;
-  word-wrap: break-word;
+  @apply hover:text-white !important;
+}
+
+a:hover {
+  @apply italic text-alphaDark !important;
 }
 
 strong {
@@ -30,6 +34,12 @@ header a,
 footer a,
 .pagination a {
   @apply text-black !important;
+}
+
+header a:hover,
+footer a:hover,
+.pagination a:hover {
+  @apply text-black not-italic !important;
 }
 
 ul {
