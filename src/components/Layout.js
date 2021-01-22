@@ -13,7 +13,6 @@ export default function Layout({ pagesData, links, children }) {
     const body = document.querySelector("body");
 
     body.addEventListener("click", (e) => {
-      console.log(e.target);
       setClickCoords([e.clientX, e.clientY]);
     });
   }, []);
