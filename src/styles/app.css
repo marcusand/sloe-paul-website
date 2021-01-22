@@ -22,7 +22,6 @@ strong {
   @apply font-normal !important;
 }
 
-a,
 strong {
   @apply text-alphaDark !important;
 }
