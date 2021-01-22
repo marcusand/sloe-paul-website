@@ -1,11 +1,11 @@
-import { useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import helpers from "../../lib/helpers";
 import Bird from "../Bird";
 
 const MAX_BIRDS = 20;
 
 export default function Hero({ children, className }) {
-  const [windowHasFocus, setWindowHasFocus] = useState(true);
+  const windowHasFocus = useRef(true);
   const [birdsData, setBirdsData] = useState([]);
   const birdsRef = useRef([]);
   const containerRef = useRef();
@@ -13,7 +13,7 @@ export default function Hero({ children, className }) {
   const randomTimeout = () => Math.random() * 30000;
 
   const addBird = (startTimeout = true) => {
-    if (birdsRef.current.length > MAX_BIRDS || !windowHasFocus) return;
+    if (birdsRef.current.length > MAX_BIRDS || !windowHasFocus.current) return;
 
     const birdsCopy = Object.assign([], birdsRef.current);
     const newBird = {
@@ -49,8 +49,13 @@ export default function Hero({ children, className }) {
       addBird(false);
     });
 
-    window.addEventListener("blur", () => setWindowHasFocus(false));
-    window.addEventListener("focus", () => setWindowHasFocus(true));
+    window.addEventListener("blur", () => {
+      windowHasFocus.current = false;
+    });
+    window.addEventListener("focus", () => {
+      windowHasFocus.current = true;
+      addBird();
+    });
   }, []);
 
   useEffect(() => {
