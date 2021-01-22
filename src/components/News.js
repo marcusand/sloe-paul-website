@@ -9,7 +9,7 @@ export default function News({ title, text, image, index }) {
           {() => <span className="mr-4">{title}</span>}
         </Ticker>
       </div>
-      <div className="h-72 w-full overflow-hidden relative my-4 bg-black">
+      <div className="h-72 w-full overflow-hidden relative my-4 bg-transparent">
         <Image
           src={image}
           alt={`News header image for article: ${title}`}
