@@ -4,7 +4,7 @@ export default function Video({ title, src }) {
   return (
     <ContentContainer>
       <iframe src={src} className="w-full h-96"></iframe>
-      <div className="text-2xl mt-1">{title}</div>
+      <h2 className="my-1">{title}</h2>
     </ContentContainer>
   );
 }
