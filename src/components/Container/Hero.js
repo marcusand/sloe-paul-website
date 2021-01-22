@@ -43,7 +43,7 @@ export default function Hero({ children, className }) {
   };
 
   useEffect(() => {
-    setTimeout(addBird, randomTimeout());
+    addBird();
 
     containerRef.current.addEventListener("click", () => {
       addBird(false);
