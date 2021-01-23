@@ -36,7 +36,12 @@ export default function Index({ pagesData }) {
         <meta name="theme-color" content="#fab1c0" />
 
         {/* Twitter */}
-        <meta name="twitter:card" content="Sloe Paul" key="twcard" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta property="twitter:domain" content="sloepaul.net" />
+        <meta property="twitter:url" content={baseUrl} />
+        <meta name="twitter:title" content="Sloe Paul" />
+        <meta name="twitter:description" content="Homepage of Sloe Paul" />
+        <meta name="twitter:image" content={`${baseUrl}/icon/header.jpg`} />
 
         {/* Open Graph */}
         <meta property="og:title" content="Sloe Paul" key="ogtitle" />
