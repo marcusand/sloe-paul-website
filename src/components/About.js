@@ -36,7 +36,7 @@ export default function About({ data }) {
         </div>
         <div className="order-1">
           <ContentContainer>
-            <div className="text-2xl text-center italic underline uppercase">News</div>
+            <h2 className="text-center italic underline">News</h2>
             <Paginate
               perPage={data.per_page}
               data={data.mount ? data.mount : []}

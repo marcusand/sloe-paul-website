@@ -5,8 +5,12 @@ export default function News({ title, text, image, index }) {
   return (
     <div className="overflow-hidden mb-6">
       <div className="w-full">
-        <Ticker mode="chain" direction={index % 2 === 0 ? "toLeft" : "toRight"}>
-          {() => <span className="mr-4">{title}</span>}
+        <Ticker
+          mode="chain"
+          offset="run-in"
+          direction={index % 2 === 0 ? "toLeft" : "toRight"}
+        >
+          {() => <span className="mr-4 whitespace-nowrap">{title}</span>}
         </Ticker>
       </div>
       <div className="h-72 w-full overflow-hidden relative my-4 bg-transparent">
