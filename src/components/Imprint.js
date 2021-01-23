@@ -6,14 +6,14 @@ export default function Imprint({ data }) {
     <div id="imprint">
       <Header>{data.title}</Header>
       <ContentContainer>
-        <div className="w-full h-full flex flex-col xl:flex-row justify-between">
+        <div className="w-full h-full flex flex-col md:flex-row justify-between">
           <div
             dangerouslySetInnerHTML={{ __html: data.text_left }}
-            className="xl:w-1/2"
+            className="md:w-1/2 "
           />
           <div
             dangerouslySetInnerHTML={{ __html: data.text_right }}
-            className="xl:mt-0 xl:w-1/2 xl:ml-12 mt-6"
+            className="md:mt-0 md:ml-12 md:w-1/2 mt-6"
           />
         </div>
       </ContentContainer>

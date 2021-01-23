@@ -23,7 +23,7 @@ export default function About({ data }) {
         </div>
       </Hero>
       <Grid>
-        <div className="order-2 xl:order-1">
+        <div className="order-2 md:order-1">
           <ContentContainer>
             <MultipageComponent
               data={[data.about_text_en, data.about_text_de]}
