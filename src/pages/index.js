@@ -1,3 +1,4 @@
+import { useRouter } from "next/router";
 import Head from "next/head";
 import About from "../components/About";
 import Imprint from "../components/Imprint";
@@ -7,6 +8,12 @@ import Videos from "../components/Videos";
 import api from "../lib/api";
 
 export default function Index({ pagesData }) {
+  const router = useRouter();
+  const baseUrl = "https://sloepaul.net";
+  const currentUrl = `${baseUrl}${router.asPath}`;
+
+  console.log(currentUrl);
+
   return (
     <div className="text-lg">
       <Head>
@@ -16,7 +23,7 @@ export default function Index({ pagesData }) {
           name="keywords"
           content="Sloe Paul, Stuttgart, Schorndorf, Berlin, Leipzig, Band, Music, Recording, Album, Concert, Live, Release, Pop, Lo-fi"
         />
-        <meta name="description" content="Homepage of musician Sloe Paul" />
+        <meta name="description" content="Homepage of Sloe Paul" />
         <meta name="author" content="Marcus Schreiter" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
@@ -29,6 +36,16 @@ export default function Index({ pagesData }) {
         <meta name="msapplication-TileColor" content="#fab1c0" />
         <meta name="msapplication-config" content="/icon/browserconfig.xml" />
         <meta name="theme-color" content="#fab1c0" />
+
+        {/* Twitter */}
+        <meta name="twitter:card" content="Sloe Paul" key="twcard" />
+
+        {/* Open Graph */}
+        <meta property="og:title" content="Sloe Paul" key="ogtitle" />
+        <meta property="og:url" content={currentUrl} key="ogurl" />
+        <meta property="og:image" content={`${baseUrl}/icon/header.jpg`} key="ogimage" />
+        <meta property="og:site_name" content="Sloe Paul" key="ogsitename" />
+        <meta property="og:description" content="Homepage of Sloe Paul" key="ogdesc" />
 
         <link rel="preload" href="/fonts/G2Erika.ttf" as="font" crossOrigin="anonymous" />
         <link
