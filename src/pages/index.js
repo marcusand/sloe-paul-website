@@ -12,8 +12,6 @@ export default function Index({ pagesData }) {
   const baseUrl = "https://sloepaul.net";
   const currentUrl = `${baseUrl}${router.asPath}`;
 
-  console.log(currentUrl);
-
   return (
     <div className="text-lg">
       <Head>
