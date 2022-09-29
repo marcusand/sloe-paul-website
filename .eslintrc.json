@@ -1,7 +1,5 @@
 {
-  "env": { "browser": true, "es6": true },
-  "globals": { "process": true },
-  "extends": ["eslint:recommended", "plugin:react/recommended", "prettier"],
+  "extends": ["next/core-web-vitals", "prettier"],
   "rules": {
     "no-case-declarations": 0,
     "no-debugger": 1,
@@ -13,8 +11,5 @@
     "react/react-in-jsx-scope": 0,
     "react/display-name": 1,
     "react/prop-types": 0
-  },
-  "parser": "babel-eslint",
-  "plugins": ["react", "react-hooks"],
-  "settings": { "react": { "version": "detect" } }
+  }
 }

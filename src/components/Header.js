@@ -1,7 +1,7 @@
 import Navigation from "./Navigation";
-import menuIcon from "!!raw-loader!../assets/icons/menu.svg";
 import { useState } from "react";
 import Links from "./Links";
+import { MenuIcon } from "../assets/icons/menu";
 
 export default function Header({ pages, links }) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -11,9 +11,10 @@ export default function Header({ pages, links }) {
       <Navigation className="nav hidden md:flex" pages={pages} />
       <div
         className="w-8 fill-current md:hidden"
-        dangerouslySetInnerHTML={{ __html: menuIcon }}
         onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-      />
+      >
+        <MenuIcon />
+      </div>
       <div className="logo">Sloe Paul</div>
       <div
         className={`w-full h-full fixed top-0 left-0 bg-blackTransparent flex flex-col items-center justify-center z-50 ${
