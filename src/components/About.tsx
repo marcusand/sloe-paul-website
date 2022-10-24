@@ -4,8 +4,17 @@ import Grid from "./Container/Grid";
 import Hero from "./Container/Hero";
 import News from "./News";
 import Paginate from "./Paginate";
+import { AboutData, News as INews } from "../api/interfaces";
 
-export default function About({ data }) {
+interface Props {
+  about: AboutData;
+  news: INews[];
+}
+
+export const About: React.FC<Props> = ({
+  about: { about_text_de, about_text_en },
+  news,
+}) => {
   return (
     <div id="about">
       <Hero className="h-hero flex flex-col md:flex-row">
@@ -26,9 +35,9 @@ export default function About({ data }) {
         <div className="order-2 md:order-1">
           <ContentContainer>
             <MultipageComponent
-              data={[data.about_text_en, data.about_text_de]}
+              data={[about_text_en, about_text_de]}
               buttonLables={["english", "deutsch"]}
-              render={(currentData) => (
+              render={(currentData: string) => (
                 <div dangerouslySetInnerHTML={{ __html: currentData }} />
               )}
             />
@@ -38,15 +47,15 @@ export default function About({ data }) {
           <ContentContainer>
             <h2 className="text-center italic underline">News</h2>
             <Paginate
-              perPage={data.per_page}
-              data={data.mount ? data.mount : []}
-              render={(newsData) => {
+              perPage={1}
+              data={news}
+              render={(newsData: INews[]) => {
                 return newsData.map((news, index) => (
                   <div key={news.id}>
                     <News
                       title={news.title}
                       text={news.text}
-                      image={news.image ? news.image.permalink : null}
+                      image={null}
                       index={index}
                     />
                     {index + 1 !== newsData.length ? (
@@ -61,4 +70,4 @@ export default function About({ data }) {
       </Grid>
     </div>
   );
-}
+};

@@ -14,14 +14,14 @@ export default function News({ title, text, image, index }) {
         </Ticker>
       </div>
       <div className="h-72 w-full overflow-hidden relative my-4 bg-transparent">
-        <Image
+        {/* <Image
           src={image}
           alt={`News header image for article: ${title}`}
           layout="fill"
           objectFit="scale-down"
           objectPosition="center center"
           sizes="(min-width: 1200px) 40vw, 100vw"
-        />
+        /> */}
       </div>
       <div dangerouslySetInnerHTML={{ __html: text }} />
     </div>

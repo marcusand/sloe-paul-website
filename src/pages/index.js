@@ -1,13 +1,17 @@
 import { useRouter } from "next/router";
 import Head from "next/head";
-import About from "../components/About";
+import { About } from "../components/About";
 import Imprint from "../components/Imprint";
 import Live from "../components/Live";
 import Releases from "../components/Releases";
 import Videos from "../components/Videos";
-import api from "../lib/api";
+import { getData, Data } from "../api/index";
 
-export default function Index({ pagesData }) {
+// interface props {
+//   data: data;
+// }
+
+export default function Index({ data }) {
   const router = useRouter();
   const baseUrl = "https://sloepaul.net";
   const currentUrl = `${baseUrl}${router.asPath}`;
@@ -58,28 +62,21 @@ export default function Index({ pagesData }) {
           crossOrigin="anonymous"
         />
       </Head>
-      <About data={pagesData[0]} />
-      <Releases data={pagesData[1]} />
-      <Videos data={pagesData[2]} />
-      <Live data={pagesData[3]} />
-      <Imprint data={pagesData[4]} />
+      <About about={data.about} news={data.news} />
+      {/* <Releases data={pagesData[1]} /> */}
+      {/* <Videos data={pagesData[2]} /> */}
+      {/* <Live data={pagesData[3]} /> */}
+      {/* <Imprint data={pagesData[4]} /> */}
     </div>
   );
 }
 
 export async function getStaticProps() {
-  const data = await api.fetchJson("/api/content");
-
-  let pagesData = data.data.pages;
-  let links = data.data.links;
-
-  pagesData = pagesData.sort((a, b) => a.order - b.order);
-  links = links.sort((a, b) => a.order - b.order);
+  const data = await getData();
 
   return {
     props: {
-      pagesData,
-      links,
+      data,
     },
     revalidate: 2,
   };

@@ -1,14 +1,20 @@
-import Navigation from "./Navigation";
+import { Navigation } from "./Navigation";
 import { useState } from "react";
-import Links from "./Links";
 import { MenuIcon } from "../assets/icons/menu";
+import { SocialLink } from "../api/interfaces";
+import { LinksList } from "./LinksList";
 
-export default function Header({ pages, links }) {
+interface Props {
+  links: SocialLink[];
+  shopLink: string;
+}
+
+export const Header: React.FC<Props> = ({ links, shopLink }) => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
     <header className="flex justify-between items-center">
-      <Navigation className="nav hidden md:flex" pages={pages} />
+      <Navigation className="nav hidden md:flex" shopLink={shopLink} />
       <div
         className="w-8 fill-current md:hidden"
         onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
@@ -23,11 +29,11 @@ export default function Header({ pages, links }) {
       >
         <Navigation
           className="mobile-nav"
-          pages={pages}
           onItemClick={() => setMobileMenuOpen(false)}
+          shopLink={shopLink}
         />
         ---
-        <Links className="mobile-links" links={links} />
+        <LinksList className="mobile-links" links={links} />
         ---
         <div
           className="uppercase text-xl text-alpha cursor-pointer"
@@ -38,4 +44,4 @@ export default function Header({ pages, links }) {
       </div>
     </header>
   );
-}
+};

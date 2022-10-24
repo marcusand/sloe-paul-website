@@ -1,10 +1,16 @@
 import React, { useEffect, useState } from "react";
-import Footer from "./Footer";
-import Header from "./Header";
+import { GeneralData } from "../api/interfaces";
+import { Footer } from "./Footer";
+import { Header } from "./Header";
 
 const plantGifSrc = "/animations/plant.gif";
 
-export default function Layout({ pagesData, links, children }) {
+interface Props {
+  generalData: GeneralData;
+  children: React.ReactElement;
+}
+
+export const Layout: React.FC<Props> = ({ generalData, children }) => {
   const [clickCoords, setClickCoords] = useState();
   const [src, setSrc] = useState(plantGifSrc);
   const offset = [-35, -20];
@@ -24,12 +30,13 @@ export default function Layout({ pagesData, links, children }) {
     setTimeout(() => setSrc(plantGifSrc), 0);
   }, [clickCoords]);
 
-  if (!pagesData) return null;
+  // if (!pagesData) return null;
+
   return (
     <div className="layout w-full h-full flex flex-col px-1 pb-1 md:pb-0 md:px-4 ">
-      <Header pages={pagesData} links={links} />
+      <Header links={generalData.links} shopLink={generalData.shop_link} />
       <main className="overflow-y-scroll overflow-x-hidden">{children}</main>
-      <Footer links={links} />
+      <Footer links={generalData.links} />
       {clickCoords ? (
         <img
           src={src}
@@ -43,4 +50,4 @@ export default function Layout({ pagesData, links, children }) {
       ) : null}
     </div>
   );
-}
+};
