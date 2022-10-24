@@ -1,5 +1,5 @@
 import { SocialLink } from "../api/interfaces";
-import Button from "./Button";
+import { Button } from "./Button";
 
 interface Props {
   className: string;
