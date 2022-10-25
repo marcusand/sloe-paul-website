@@ -1,10 +1,10 @@
 import { ContentContainer } from "./Container/ContentContainer";
-import MultipageComponent from "./MultipageComponent";
 import { Grid } from "./Container/Grid";
 import { Hero } from "./Container/Hero";
 import { News } from "./News";
 import Paginate from "./Paginate";
 import { AboutData, News as INews } from "../api/interfaces";
+import { MultiPageComponent } from "./MultiPageComponent";
 
 interface Props {
   about: AboutData;
@@ -34,9 +34,9 @@ export const About: React.FC<Props> = ({
       <Grid>
         <div className="order-2 md:order-1">
           <ContentContainer>
-            <MultipageComponent
+            <MultiPageComponent
               data={[about_text_en, about_text_de]}
-              buttonLables={["english", "deutsch"]}
+              buttonLabels={["english", "deutsch"]}
               render={(currentData: string) => (
                 <div dangerouslySetInnerHTML={{ __html: currentData }} />
               )}

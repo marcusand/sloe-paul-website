@@ -1,9 +1,9 @@
 import moment from "moment";
 import Header from "./Container/Header";
 import { ContentContainer } from "./Container/ContentContainer";
+import { MultiPageComponent } from "./MultiPageComponent";
 import Hero from "./Container/Hero";
 import { Grid } from "./Container/Grid";
-import MultipageComponent from "./MultipageComponent";
 import { useState } from "react";
 import ShowList from "./ShowList";
 
@@ -38,18 +38,18 @@ export default function Live({ data }) {
       </Hero>
       <Grid>
         <ContentContainer>
-          <MultipageComponent
+          <MultiPageComponent
             data={[upcomingShows, pastShows.reverse()]}
-            buttonLables={["upcoming shows", "past shows"]}
+            buttonLabels={["upcoming shows", "past shows"]}
             render={(shows, index) => (
               <ShowList shows={shows} perPage={data.per_page} pastShows={index === 1} />
             )}
           />
         </ContentContainer>
         <ContentContainer>
-          <MultipageComponent
+          <MultiPageComponent
             data={[data.description_en, data.description_de]}
-            buttonLables={["english", "deutsch"]}
+            buttonLabels={["english", "deutsch"]}
             render={(currentData) => (
               <div dangerouslySetInnerHTML={{ __html: currentData }} />
             )}
