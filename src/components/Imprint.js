@@ -1,4 +1,4 @@
-import ContentContainer from "./Container/ContentContainer";
+import { ContentContainer } from "./Container/ContentContainer";
 import Header from "./Container/Header";
 
 export default function Imprint({ data }) {

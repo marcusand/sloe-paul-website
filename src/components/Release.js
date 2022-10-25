@@ -1,5 +1,5 @@
 import Image from "next/image";
-import ContentContainer from "./Container/ContentContainer";
+import { ContentContainer } from "./Container/ContentContainer";
 
 export default function Release({ title, description, image }) {
   return (

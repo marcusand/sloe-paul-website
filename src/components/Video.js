@@ -1,4 +1,4 @@
-import ContentContainer from "./Container/ContentContainer";
+import { ContentContainer } from "./Container/ContentContainer";
 
 export default function Video({ title, src }) {
   return (

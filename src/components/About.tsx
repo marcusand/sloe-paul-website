@@ -1,4 +1,4 @@
-import ContentContainer from "./Container/ContentContainer";
+import { ContentContainer } from "./Container/ContentContainer";
 import MultipageComponent from "./MultipageComponent";
 import { Grid } from "./Container/Grid";
 import { Hero } from "./Container/Hero";

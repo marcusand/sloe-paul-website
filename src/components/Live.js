@@ -1,6 +1,6 @@
 import moment from "moment";
 import Header from "./Container/Header";
-import ContentContainer from "./Container/ContentContainer";
+import { ContentContainer } from "./Container/ContentContainer";
 import Hero from "./Container/Hero";
 import { Grid } from "./Container/Grid";
 import MultipageComponent from "./MultipageComponent";
