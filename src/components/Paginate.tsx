@@ -1,10 +1,16 @@
 import { useEffect, useState } from "react";
 import ReactPaginate from "react-paginate";
 
-export default function Paginate({ perPage, data, render }) {
-  const [paginatedData, setPaginatedData] = useState([]);
+interface Props<T> {
+  perPage: number;
+  data: T[];
+  render: (data: T[]) => React.ReactNode;
+}
 
-  const handlePageClick = ({ selected }) => {
+export const Paginate = <T,>({ perPage, data, render }: Props<T>) => {
+  const [paginatedData, setPaginatedData] = useState<T[]>([]);
+
+  const handlePageChange = ({ selected }: { selected: number }) => {
     setPaginatedData(data.slice(selected * perPage, selected * perPage + perPage));
   };
 
@@ -21,11 +27,10 @@ export default function Paginate({ perPage, data, render }) {
         pageCount={Math.ceil(data.length / perPage)}
         marginPagesDisplayed={5}
         pageRangeDisplayed={5}
-        onPageChange={handlePageClick}
+        onPageChange={handlePageChange}
         containerClassName={"pagination text-sm md:text-lg"}
-        subContainerClassName={"pages pagination"}
         activeClassName={"active"}
       />
     </div>
   );
-}
+};

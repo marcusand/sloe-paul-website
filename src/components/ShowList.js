@@ -1,5 +1,5 @@
 import moment from "moment";
-import Paginate from "./Paginate";
+import { Paginate } from "./Paginate";
 
 export default function ShowList({ shows, perPage, pastShows = false }) {
   const getFormattedDate = (dateString) => {
