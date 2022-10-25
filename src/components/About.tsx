@@ -1,7 +1,7 @@
 import ContentContainer from "./Container/ContentContainer";
 import MultipageComponent from "./MultipageComponent";
 import Grid from "./Container/Grid";
-import Hero from "./Container/Hero";
+import { Hero } from "./Container/Hero";
 import { News } from "./News";
 import Paginate from "./Paginate";
 import { AboutData, News as INews } from "../api/interfaces";
