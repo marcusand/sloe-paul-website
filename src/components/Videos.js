@@ -1,4 +1,4 @@
-import Grid from "./Container/Grid";
+import { Grid } from "./Container/Grid";
 import Header from "./Container/Header";
 import Video from "./Video";
 
