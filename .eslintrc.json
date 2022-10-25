@@ -1,11 +1,16 @@
 {
-  "extends": ["next/core-web-vitals", "prettier"],
+  "extends": [
+    "next/core-web-vitals",
+    "plugin:@typescript-eslint/recommended",
+    "prettier"
+  ],
   "rules": {
     "no-case-declarations": 0,
     "no-debugger": 1,
     "no-empty-pattern": 1,
     "no-unreachable": 1,
-    "no-unused-vars": 1,
+    "no-unused-vars": 0,
+    "@typescript-eslint/no-unused-vars": ["error"],
     "react-hooks/exhaustive-deps": 0,
     "react-hooks/rules-of-hooks": 1,
     "react/react-in-jsx-scope": 0,
