@@ -9,6 +9,13 @@ import {
   Video,
 } from "./interfaces";
 
+export const getAssetUrl = (
+  assetId: string,
+  transformationPreset = "standard",
+): string => {
+  return `${process.env.NEXT_PUBLIC_CMS_HOST}/assets/${assetId}?key=${transformationPreset}`;
+};
+
 const fetchJson = async <T>(uri: string, filterStatus: boolean = false): Promise<T> => {
   const statusFilter = filterStatus ? { status: { _eq: "published" } } : {};
   const url = `${

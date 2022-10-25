@@ -2,7 +2,7 @@ import ContentContainer from "./Container/ContentContainer";
 import MultipageComponent from "./MultipageComponent";
 import Grid from "./Container/Grid";
 import Hero from "./Container/Hero";
-import News from "./News";
+import { News } from "./News";
 import Paginate from "./Paginate";
 import { AboutData, News as INews } from "../api/interfaces";
 
@@ -52,12 +52,7 @@ export const About: React.FC<Props> = ({
               render={(newsData: INews[]) => {
                 return newsData.map((news, index) => (
                   <div key={news.id}>
-                    <News
-                      title={news.title}
-                      text={news.text}
-                      image={null}
-                      index={index}
-                    />
+                    <News item={news} />
                     {index + 1 !== newsData.length ? (
                       <div className="text-center mb-6">---</div>
                     ) : null}

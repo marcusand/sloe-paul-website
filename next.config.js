@@ -9,6 +9,7 @@ const nextConfig = {
       "sloe-paul.test",
       "sloepaul.marcusand.de",
       "edit.sloepaul.net",
+      "sloe.marcusand.de",
     ],
   },
   poweredByHeader: false,
