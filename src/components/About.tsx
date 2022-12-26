@@ -7,12 +7,12 @@ import { AboutData, News as INews } from "../api/interfaces";
 import { MultiPageComponent } from "./MultiPageComponent";
 
 interface Props {
-  about: AboutData;
+  data: AboutData;
   news: INews[];
 }
 
 export const About: React.FC<Props> = ({
-  about: { about_text_de, about_text_en },
+  data: { about_text_de, about_text_en },
   news,
 }) => {
   return (
