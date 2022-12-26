@@ -4,7 +4,7 @@ import { MultiPageComponent } from "./MultiPageComponent";
 import { Hero } from "./Container/Hero";
 import { Grid } from "./Container/Grid";
 import { useState } from "react";
-import ShowList from "./ShowList";
+import { ShowList } from "./ShowList";
 import { Concert, LiveData } from "../api/interfaces";
 import { isDateUpcoming } from "../lib/helpers";
 import { getAssetUrl } from "../api";
@@ -19,8 +19,8 @@ export const Live: React.FC<Props> = ({
   concerts,
 }) => {
   const [videoMuted, setVideoMuted] = useState(true);
-  const upcomingShows = concerts.filter(({ date }) => isDateUpcoming(new Date(date)));
-  const pastShows = concerts.filter(({ date }) => !isDateUpcoming(new Date(date)));
+  const upcomingShows = concerts.filter(({ date }) => isDateUpcoming(date));
+  const pastShows = concerts.filter(({ date }) => !isDateUpcoming(date));
   const perPage = concerts_per_page ?? 8;
 
   return (
