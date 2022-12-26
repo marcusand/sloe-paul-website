@@ -3,7 +3,7 @@ import Head from "next/head";
 import { About } from "../components/About";
 import Imprint from "../components/Imprint";
 import Live from "../components/Live";
-import Releases from "../components/Releases";
+import { Releases } from "../components/Releases";
 import Videos from "../components/Videos";
 import { getData, Data } from "../api/index";
 
@@ -63,7 +63,7 @@ export default function Index({ data }) {
         />
       </Head>
       <About about={data.about} news={data.news} />
-      {/* <Releases data={pagesData[1]} /> */}
+      <Releases data={data.releases} />
       {/* <Videos data={pagesData[2]} /> */}
       {/* <Live data={pagesData[3]} /> */}
       {/* <Imprint data={pagesData[4]} /> */}

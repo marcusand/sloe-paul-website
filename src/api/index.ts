@@ -16,7 +16,7 @@ export const getAssetUrl = (
   return `${process.env.NEXT_PUBLIC_CMS_HOST}/assets/${assetId}?key=${transformationPreset}`;
 };
 
-const fetchJson = async <T>(uri: string, filterStatus: boolean = false): Promise<T> => {
+const fetchJson = async <T>(uri: string, filterStatus = false): Promise<T> => {
   const statusFilter = filterStatus ? { status: { _eq: "published" } } : {};
   const url = `${
     process.env.NEXT_PUBLIC_CMS_HOST
@@ -37,10 +37,7 @@ const fetchJson = async <T>(uri: string, filterStatus: boolean = false): Promise
   return await response.json();
 };
 
-const fetchItems = async <T>(
-  collection: string,
-  filterStatus: boolean = false,
-): Promise<T> => {
+const fetchItems = async <T>(collection: string, filterStatus = false): Promise<T> => {
   const json = await fetchJson<{ data: T }>(`/items/${collection}`, filterStatus);
 
   return json.data;

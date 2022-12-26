@@ -1,13 +1,17 @@
 import Image from "next/image";
 import { ContentContainer } from "./Container/ContentContainer";
+import { Release as IRelease } from "../api/interfaces";
+import { getAssetUrl } from "../api";
 
-export default function Release({ title, description, image }) {
+type Props = IRelease;
+
+export const Release: React.FC<Props> = ({ title, description, cover }) => {
   return (
     <ContentContainer>
       <div className="w-full h-full flex flex-col xl:flex-row">
         <div className="flex w-full xl:w-1/2 justify-center items-center">
           <Image
-            src={image}
+            src={getAssetUrl(cover.id)}
             width={500}
             height={500}
             alt={`Cover of the album ${title}`}
@@ -20,4 +24,4 @@ export default function Release({ title, description, image }) {
       </div>
     </ContentContainer>
   );
-}
+};

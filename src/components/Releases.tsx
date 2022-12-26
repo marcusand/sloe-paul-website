@@ -1,23 +1,27 @@
 import { Grid } from "./Container/Grid";
 import Header from "./Container/Header";
-import Release from "./Release";
+import { Release } from "./Release";
+import { Release as IRelease } from "../api/interfaces";
 
-export default function Releases({ data }) {
+interface Props {
+  data: IRelease[];
+}
+
+export const Releases: React.FC<Props> = ({ data }) => {
   return (
     <div className="my-4" id="releases">
-      <Header>{data.title}</Header>
+      <Header>Releases</Header>
       <Grid>
-        {data.mount.map((release) => (
+        {data.map((release) => (
           <Release
             key={release.id}
             id={release.id}
             title={release.title}
             description={release.description}
-            image={release.image.permalink}
-            link={release.link}
+            cover={release.cover}
           />
         ))}
       </Grid>
     </div>
   );
-}
+};
