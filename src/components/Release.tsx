@@ -3,7 +3,7 @@ import { ContentContainer } from "./Container/ContentContainer";
 import { Release as IRelease } from "../api/interfaces";
 import { getAssetUrl } from "../api";
 
-type Props = IRelease;
+type Props = Omit<IRelease, "id">;
 
 export const Release: React.FC<Props> = ({ title, description, cover }) => {
   return (

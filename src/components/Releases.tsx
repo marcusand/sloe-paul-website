@@ -15,7 +15,6 @@ export const Releases: React.FC<Props> = ({ data }) => {
         {data.map((release) => (
           <Release
             key={release.id}
-            id={release.id}
             title={release.title}
             description={release.description}
             cover={release.cover}
