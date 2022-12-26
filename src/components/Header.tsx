@@ -5,8 +5,8 @@ import { SocialLink } from "../api/interfaces";
 import { LinksList } from "./LinksList";
 
 interface Props {
-  links: SocialLink[];
-  shopLink: string;
+  links?: SocialLink[];
+  shopLink?: string;
 }
 
 export const Header: React.FC<Props> = ({ links, shopLink }) => {
@@ -33,7 +33,7 @@ export const Header: React.FC<Props> = ({ links, shopLink }) => {
           shopLink={shopLink}
         />
         ---
-        <LinksList className="mobile-links" links={links} />
+        {links && <LinksList className="mobile-links" links={links} />}
         ---
         <div
           className="uppercase text-xl text-alpha cursor-pointer"

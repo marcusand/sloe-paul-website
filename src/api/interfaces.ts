@@ -16,37 +16,28 @@ export interface SocialLink {
 
 export interface GeneralData {
   id: string;
-  links: SocialLink[];
-  shop_link: string;
+  links?: SocialLink[];
+  shop_link?: string;
 }
 
 export interface AboutData {
   id: string;
-  about_text_de: string;
-  about_text_en: string;
-}
-
-export interface Concert {
-  id: string;
-  date: string;
-  location: string;
-  city: string;
-  description: string;
-  link: string;
+  about_text_de?: string;
+  about_text_en?: string;
 }
 
 export interface News {
   id: string;
   title: string;
-  image: ImageFile;
-  text: string;
+  image?: ImageFile;
+  text?: string;
 }
 
 export interface Release {
   id: string;
   title: string;
   cover: ImageFile;
-  description: string;
+  description?: string;
 }
 
 export interface Video {
@@ -58,13 +49,22 @@ export interface Video {
 export interface LiveData {
   id: string;
   video: File;
-  description_de: string;
-  description_en: string;
-  concerts_per_page: number;
+  description_de?: string;
+  description_en?: string;
+  concerts_per_page?: number;
+}
+
+export interface Concert {
+  id: string;
+  date: string;
+  location?: string;
+  city?: string;
+  description?: string;
+  link?: string;
 }
 
 export interface ImprintData {
   id: string;
-  text_left: string;
-  text_right: string;
+  text_left?: string;
+  text_right?: string;
 }

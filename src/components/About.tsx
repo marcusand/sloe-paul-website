@@ -35,7 +35,7 @@ export const About: React.FC<Props> = ({
         <div className="order-2 md:order-1">
           <ContentContainer>
             <MultiPageComponent
-              data={[about_text_en, about_text_de]}
+              data={[about_text_en || "", about_text_de || ""]}
               buttonLabels={["english", "deutsch"]}
               render={(currentData: string) => (
                 <div dangerouslySetInnerHTML={{ __html: currentData }} />

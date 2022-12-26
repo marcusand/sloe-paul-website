@@ -1,13 +1,21 @@
 import { Button } from "./Button";
 
 interface Props {
-  shopLink: string;
   className: string;
+  shopLink?: string;
   onItemClick?: () => void;
 }
 
+interface Page {
+  id: number;
+  external: boolean;
+  slug?: string;
+  url?: string;
+  title: string;
+}
+
 export const Navigation: React.FC<Props> = ({ shopLink, className, onItemClick }) => {
-  const pages = [
+  const pages: Page[] = [
     {
       id: 1,
       external: false,
@@ -38,13 +46,16 @@ export const Navigation: React.FC<Props> = ({ shopLink, className, onItemClick }
       slug: "imprint",
       title: "Imprint",
     },
-    {
+  ];
+
+  if (shopLink !== undefined) {
+    pages.push({
       id: 6,
       external: true,
       url: shopLink,
       title: "Shop",
-    },
-  ];
+    });
+  }
 
   return (
     <div className={`${className} `}>

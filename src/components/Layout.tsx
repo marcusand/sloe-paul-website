@@ -11,16 +11,20 @@ interface Props {
 }
 
 export const Layout: React.FC<Props> = ({ generalData, children }) => {
-  const [clickCoords, setClickCoords] = useState();
-  const [src, setSrc] = useState(plantGifSrc);
+  const [clickCoords, setClickCoords] = useState<[number, number]>();
+  const [src, setSrc] = useState<string | null>(plantGifSrc);
   const offset = [-35, -20];
 
-  useEffect(() => {
-    const body = document.querySelector("body");
+  const handleClick = (event: MouseEvent) => {
+    setClickCoords([event.clientX, event.clientY]);
+  };
 
-    body.addEventListener("click", (e) => {
-      setClickCoords([e.clientX, e.clientY]);
-    });
+  useEffect(() => {
+    document.body.addEventListener("click", handleClick);
+
+    return () => {
+      document.body.removeEventListener("click", handleClick);
+    };
   }, []);
 
   useEffect(() => {
@@ -30,16 +34,17 @@ export const Layout: React.FC<Props> = ({ generalData, children }) => {
     setTimeout(() => setSrc(plantGifSrc), 0);
   }, [clickCoords]);
 
-  // if (!pagesData) return null;
+  /* eslint-disable @next/next/no-img-element */
 
   return (
     <div className="layout w-full h-full flex flex-col px-1 pb-1 md:pb-0 md:px-4 ">
       <Header links={generalData.links} shopLink={generalData.shop_link} />
       <main className="overflow-y-scroll overflow-x-hidden">{children}</main>
       <Footer links={generalData.links} />
-      {clickCoords ? (
+      {clickCoords && src ? (
         <img
           src={src}
+          alt=""
           className="fixed top-0 left-0 w-16 z-50 pointer-events-none"
           style={{
             transform: `translate(${clickCoords[0] + offset[0]}px, ${

@@ -16,6 +16,8 @@ const Index: React.FC<Props> = ({ data }) => {
   const baseUrl = "https://sloepaul.net";
   const currentUrl = `${baseUrl}${router.asPath}`;
 
+  console.log(data.about);
+
   return (
     <div className="text-lg">
       <Head>

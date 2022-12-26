@@ -2,14 +2,14 @@ import { SocialLink } from "../api/interfaces";
 import { LinksList } from "./LinksList";
 
 interface Props {
-  links: SocialLink[];
+  links?: SocialLink[];
 }
 
 export const Footer: React.FC<Props> = ({ links }) => {
   return (
     <footer className="hidden md:flex justify-between items-center">
       <div className="logo">Sloe Paul</div>
-      <LinksList className="links" links={links} />
+      {links && <LinksList className="links" links={links} />}
     </footer>
   );
 };

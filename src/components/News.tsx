@@ -16,15 +16,17 @@ export const News: React.FC<Props> = ({ item: { image, title, text } }) => {
         </Ticker>
       </div>
       <div className="h-72 w-full overflow-hidden relative my-4 bg-transparent">
-        <Image
-          src={getAssetUrl(image.id)}
-          alt={`News header image for article: ${title}`}
-          layout="fill"
-          objectFit="scale-down"
-          objectPosition="center center"
-        />
+        {image && (
+          <Image
+            src={getAssetUrl(image.id)}
+            alt={`News header image for article: ${title}`}
+            layout="fill"
+            objectFit="scale-down"
+            objectPosition="center center"
+          />
+        )}
       </div>
-      <div dangerouslySetInnerHTML={{ __html: text }} />
+      {text && <div dangerouslySetInnerHTML={{ __html: text }} />}
     </div>
   );
 };

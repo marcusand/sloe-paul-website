@@ -19,7 +19,7 @@ export const Release: React.FC<Props> = ({ title, description, cover }) => {
         </div>
         <div className="w-full xl:w-1/2 xl:ml-4 xl:px-4 mt-2 xl:mt-0">
           <h2>{title}</h2>
-          <div dangerouslySetInnerHTML={{ __html: description }} />
+          {description && <div dangerouslySetInnerHTML={{ __html: description }} />}
         </div>
       </div>
     </ContentContainer>
