@@ -1,17 +1,17 @@
 import { useRouter } from "next/router";
 import Head from "next/head";
 import { About } from "../components/About";
-import Imprint from "../components/Imprint";
-import Live from "../components/Live";
+// import Imprint from "../components/Imprint";
+// import Live from "../components/Live";
 import { Releases } from "../components/Releases";
-import Videos from "../components/Videos";
+// import Videos from "../components/Videos";
 import { getData, Data } from "../api/index";
 
-// interface props {
-//   data: data;
-// }
+interface Props {
+  data: Data;
+}
 
-export default function Index({ data }) {
+const Index: React.FC<Props> = ({ data }) => {
   const router = useRouter();
   const baseUrl = "https://sloepaul.net";
   const currentUrl = `${baseUrl}${router.asPath}`;
@@ -69,7 +69,9 @@ export default function Index({ data }) {
       {/* <Imprint data={pagesData[4]} /> */}
     </div>
   );
-}
+};
+
+export default Index;
 
 export async function getStaticProps() {
   const data = await getData();
