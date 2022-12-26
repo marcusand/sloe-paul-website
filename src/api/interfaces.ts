@@ -18,6 +18,11 @@ export interface GeneralData {
   id: string;
   links?: SocialLink[];
   shop_link?: string;
+  meta_domain?: string;
+  meta_title: string;
+  meta_description?: string;
+  meta_author?: string;
+  meta_keywords?: string[];
 }
 
 export interface AboutData {

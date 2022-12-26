@@ -13,20 +13,19 @@ interface Props {
 
 const Index: React.FC<Props> = ({ data }) => {
   const router = useRouter();
-  const baseUrl = "https://sloepaul.net";
+  const { meta_title, meta_description, meta_author, meta_domain, meta_keywords } =
+    data.general;
+  const baseUrl = `https://${meta_domain}`;
   const currentUrl = `${baseUrl}${router.asPath}`;
 
   return (
     <div className="text-lg">
       <Head>
-        <title>Sloe Paul</title>
-        <meta property="og:title" content="Sloe Paul" key="title" />
-        <meta
-          name="keywords"
-          content="Sloe Paul, Stuttgart, Schorndorf, Berlin, Leipzig, Band, Music, Recording, Album, Concert, Live, Release, Pop, Lo-fi"
-        />
-        <meta name="description" content="Homepage of Sloe Paul" />
-        <meta name="author" content="Marcus Schreiter" />
+        <title>{meta_title}</title>
+        <meta property="og:title" content={meta_title} key="title" />
+        <meta name="keywords" content={meta_keywords?.join(", ")} />
+        <meta name="description" content={meta_description} />
+        <meta name="author" content={meta_author} />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
         <link rel="apple-touch-icon" sizes="180x180" href="/icon/apple-touch-icon.png" />
@@ -41,18 +40,18 @@ const Index: React.FC<Props> = ({ data }) => {
 
         {/* Twitter */}
         <meta name="twitter:card" content="summary_large_image" />
-        <meta property="twitter:domain" content="sloepaul.net" />
+        <meta property="twitter:domain" content={meta_domain} />
         <meta property="twitter:url" content={baseUrl} />
-        <meta name="twitter:title" content="Sloe Paul" />
-        <meta name="twitter:description" content="Homepage of Sloe Paul" />
+        <meta name="twitter:title" content={meta_title} />
+        <meta name="twitter:description" content={meta_description} />
         <meta name="twitter:image" content={`${baseUrl}/icon/header.jpg`} />
 
         {/* Open Graph */}
-        <meta property="og:title" content="Sloe Paul" key="ogtitle" />
+        <meta property="og:title" content={meta_title} key="ogtitle" />
         <meta property="og:url" content={currentUrl} key="ogurl" />
         <meta property="og:image" content={`${baseUrl}/icon/header.jpg`} key="ogimage" />
-        <meta property="og:site_name" content="Sloe Paul" key="ogsitename" />
-        <meta property="og:description" content="Homepage of Sloe Paul" key="ogdesc" />
+        <meta property="og:site_name" content={meta_title} key="ogsitename" />
+        <meta property="og:description" content={meta_description} key="ogdesc" />
 
         <link rel="preload" href="/fonts/G2Erika.ttf" as="font" crossOrigin="anonymous" />
         <link
