@@ -16,6 +16,10 @@ export const getAssetUrl = (
   return `${process.env.NEXT_PUBLIC_CMS_HOST}/assets/${assetId}?key=${transformationPreset}`;
 };
 
+export const getYoutubeEmbedUrl = (videoId: string): string => {
+  return `https://www.youtube.com/embed/${videoId}`;
+};
+
 const fetchJson = async <T>(uri: string, filterStatus = false): Promise<T> => {
   const statusFilter = filterStatus ? { status: { _eq: "published" } } : {};
   const url = `${

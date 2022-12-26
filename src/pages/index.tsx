@@ -4,7 +4,7 @@ import { About } from "../components/About";
 // import Imprint from "../components/Imprint";
 // import Live from "../components/Live";
 import { Releases } from "../components/Releases";
-// import Videos from "../components/Videos";
+import { Videos } from "../components/Videos";
 import { getData, Data } from "../api/index";
 
 interface Props {
@@ -66,7 +66,7 @@ const Index: React.FC<Props> = ({ data }) => {
       </Head>
       <About about={data.about} news={data.news} />
       <Releases data={data.releases} />
-      {/* <Videos data={pagesData[2]} /> */}
+      <Videos data={data.videos} />
       {/* <Live data={pagesData[3]} /> */}
       {/* <Imprint data={pagesData[4]} /> */}
     </div>
