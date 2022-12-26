@@ -2,7 +2,7 @@ import { useRouter } from "next/router";
 import Head from "next/head";
 import { About } from "../components/About";
 // import Imprint from "../components/Imprint";
-// import Live from "../components/Live";
+import { Live } from "../components/Live";
 import { Releases } from "../components/Releases";
 import { Videos } from "../components/Videos";
 import { getData, Data } from "../api/index";
@@ -16,7 +16,7 @@ const Index: React.FC<Props> = ({ data }) => {
   const baseUrl = "https://sloepaul.net";
   const currentUrl = `${baseUrl}${router.asPath}`;
 
-  console.log(data.about);
+  console.log(data.concerts);
 
   return (
     <div className="text-lg">
@@ -67,7 +67,7 @@ const Index: React.FC<Props> = ({ data }) => {
       <About about={data.about} news={data.news} />
       <Releases data={data.releases} />
       <Videos data={data.videos} />
-      {/* <Live data={pagesData[3]} /> */}
+      <Live data={data.live} concerts={data.concerts} />
       {/* <Imprint data={pagesData[4]} /> */}
     </div>
   );

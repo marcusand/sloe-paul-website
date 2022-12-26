@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { Bird, IBird } from "../Bird";
-import helpers from "../../lib/helpers";
+import { getRandomArbitrary } from "../../lib/helpers";
 
 const MAX_BIRDS = 20;
 
@@ -20,12 +20,10 @@ export const Hero: React.FC<Props> = ({ children, className = "" }) => {
 
     const newBird: IBird = {
       id: String(Date.now()),
-      width: helpers.getRandomArbitrary(50, 150),
+      width: getRandomArbitrary(50, 150),
       direction: Math.random() > 0.5 ? "left" : "right",
-      speed: helpers.getRandomArbitrary(0.15, 0.5),
-      y: Math.round(
-        helpers.getRandomArbitrary(0, containerRef.current.offsetHeight * 0.8),
-      ),
+      speed: getRandomArbitrary(0.15, 0.5),
+      y: Math.round(getRandomArbitrary(0, containerRef.current.offsetHeight * 0.8)),
     };
 
     setBirds((currentBirds) => [...currentBirds, newBird]);
