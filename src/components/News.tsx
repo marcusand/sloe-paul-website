@@ -3,11 +3,9 @@ import Image from "next/image";
 import { News as INews } from "../api/interfaces";
 import { getAssetUrl } from "../api";
 
-interface Props {
-  item: INews;
-}
+type Props = Omit<INews, "id">;
 
-export const News: React.FC<Props> = ({ item: { image, title, text } }) => {
+export const News: React.FC<Props> = ({ image, title, text }) => {
   return (
     <div className="overflow-hidden mb-6">
       <div className="w-full">

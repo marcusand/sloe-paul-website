@@ -50,9 +50,9 @@ export const About: React.FC<Props> = ({
               perPage={1}
               data={news}
               render={(newsData: INews[]) => {
-                return newsData.map((news, index) => (
-                  <div key={news.id}>
-                    <News item={news} />
+                return newsData.map(({ id, title, image, text }, index) => (
+                  <div key={id}>
+                    <News title={title} image={image} text={text} />
                     {index + 1 !== newsData.length ? (
                       <div className="text-center mb-6">---</div>
                     ) : null}
