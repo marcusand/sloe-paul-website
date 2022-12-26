@@ -1,5 +1,5 @@
 import { Grid } from "./Container/Grid";
-import Header from "./Container/Header";
+import { Header } from "./Container/Header";
 import { Video } from "./Video";
 import { Video as IVideo } from "../api/interfaces";
 

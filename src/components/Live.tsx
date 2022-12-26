@@ -1,4 +1,4 @@
-import Header from "./Container/Header";
+import { Header } from "./Container/Header";
 import { ContentContainer } from "./Container/ContentContainer";
 import { MultiPageComponent } from "./MultiPageComponent";
 import { Hero } from "./Container/Hero";

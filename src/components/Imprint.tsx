@@ -1,6 +1,6 @@
 import { ImprintData } from "../api/interfaces";
 import { ContentContainer } from "./Container/ContentContainer";
-import Header from "./Container/Header";
+import { Header } from "./Container/Header";
 
 interface Props {
   data: ImprintData;
