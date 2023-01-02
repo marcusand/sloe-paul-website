@@ -6,7 +6,7 @@ import { Grid } from "./Container/Grid";
 import { useState } from "react";
 import { ShowList } from "./ShowList";
 import { Concert, LiveData } from "../api/interfaces";
-import { isDateUpcoming } from "../lib/helpers";
+import { isDateUpcoming, sortConcerts } from "../lib/helpers";
 import { getAssetUrl } from "../api";
 
 interface Props {
@@ -19,8 +19,9 @@ export const Live: React.FC<Props> = ({
   concerts,
 }) => {
   const [videoMuted, setVideoMuted] = useState(true);
-  const upcomingShows = concerts.filter(({ date }) => isDateUpcoming(date));
-  const pastShows = concerts.filter(({ date }) => !isDateUpcoming(date));
+  const concertsSorted = sortConcerts(concerts);
+  const upcomingShows = concertsSorted.filter(({ date }) => isDateUpcoming(date));
+  const pastShows = concertsSorted.filter(({ date }) => !isDateUpcoming(date));
   const perPage = concerts_per_page ?? 8;
 
   return (
@@ -48,7 +49,7 @@ export const Live: React.FC<Props> = ({
             data={[upcomingShows, pastShows.reverse()]}
             buttonLabels={["upcoming shows", "past shows"]}
             render={(shows, index) => (
-              <ShowList shows={shows} perPage={perPage} pastShows={index === 1} />
+              <ShowList shows={shows} perPage={perPage} showTicketLink={index === 0} />
             )}
           />
         </ContentContainer>
