@@ -31,7 +31,7 @@ export const Layout: React.FC<Props> = ({ generalData, children }) => {
     if (!clickCoords) return;
 
     setSrc(null);
-    setTimeout(() => setSrc(plantGifSrc), 0);
+    setTimeout(() => setSrc(plantGifSrc), 10);
   }, [clickCoords]);
 
   /* eslint-disable @next/next/no-img-element */
@@ -41,9 +41,9 @@ export const Layout: React.FC<Props> = ({ generalData, children }) => {
       <Header links={generalData.links} shopLink={generalData.shop_link} />
       <main className="overflow-y-scroll overflow-x-hidden">{children}</main>
       <Footer links={generalData.links} />
-      {clickCoords && src ? (
+      {clickCoords ? (
         <img
-          src={src}
+          src={src || ""}
           alt=""
           className="fixed top-0 left-0 w-16 z-50 pointer-events-none"
           style={{
