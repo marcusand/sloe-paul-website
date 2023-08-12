@@ -1,0 +1,14 @@
+version: "3"
+services:
+  website:
+    image: .
+    container_name: sloe-frontend
+    networks:
+      - traefik
+    ports:
+      - 8083:3000
+
+networks:
+  traefik:
+    name: traefik
+    external: true
