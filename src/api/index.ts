@@ -34,7 +34,7 @@ const fetchJson = async <T>(uri: string, filterStatus = false): Promise<T> => {
 
   if (response.status !== 200) {
     throw new Error(
-      `Request failed with status code ${response.status}: ${response.statusText}`,
+      `Request to ${url} failed with status code ${response.status}: ${response.statusText}`,
     );
   }
 
