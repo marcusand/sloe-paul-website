@@ -1,12 +1,12 @@
 version: "3"
 services:
-  website:
-    image: .
+  sloe-frontend:
+    build: .
     container_name: sloe-frontend
     networks:
       - traefik
     ports:
-      - 8083:3000
+      - 8084:3000
 
 networks:
   traefik:
