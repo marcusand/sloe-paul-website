@@ -9,6 +9,7 @@
 /coverage
 /node_modules
 /out/
+/deploy/build/
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*

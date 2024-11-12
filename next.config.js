@@ -1,4 +1,6 @@
 const nextConfig = {
+  distDir: "deploy/build",
+  output: "standalone",
   i18n: {
     locales: ["en-US"],
     defaultLocale: "en-US",

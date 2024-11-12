@@ -1,0 +1,39 @@
+name: deploy
+
+on:
+  push:
+    branches: [refactor-2022]
+
+concurrency:
+  group: ${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3.1.1
+        with:
+          node-version: 18
+      - name: install
+        run: npm ci
+      - name: build
+        run: npm run build
+        env:
+          CMS_API_TOKEN: ${{ secrets.CMS_API_TOKEN }}
+      - name: copy public folder
+        run: cp -r public deploy/build/standalone
+      - name: copy static folder
+        run: cp -r deploy/build/static deploy/build/standalone
+      - name: add CMS_API_TOKEN to .env file
+        run: echo "CMS_API_TOKEN=${{ secrets.CMS_API_TOKEN }}" >> deploy/build/standalone/.env.production
+      # - name: rsync deployments
+      #   uses: burnett01/rsync-deployments@5.2
+      #   with:
+      #     switches: -avzr --delete
+      #     path: ./deploy/
+      #     remote_path: /home/deploy/projects/${{ github.event.repository.name }}/
+      #     remote_host: ${{ secrets.DEPLOY_HOST }}
+      #     remote_user: ${{ secrets.DEPLOY_USER }}
+      #     remote_key: ${{ secrets.DEPLOY_KEY }}
