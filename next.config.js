@@ -12,6 +12,7 @@ const nextConfig = {
       "sloepaul.marcusand.de",
       "edit.sloepaul.net",
       "sloe.marcusand.de",
+      "sloe-cms.marcusand.de",
     ],
   },
   poweredByHeader: false,
