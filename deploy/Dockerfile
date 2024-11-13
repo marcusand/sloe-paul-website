@@ -7,6 +7,8 @@ WORKDIR /app
 # Set environment variable to production
 ENV NODE_ENV=production
 
+RUN npm install sharp@0.32.6
+
 # Fix sharp path
 ENV NEXT_SHARP_PATH=/app/node_modules/sharp
 
