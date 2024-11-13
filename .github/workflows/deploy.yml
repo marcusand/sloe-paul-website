@@ -25,7 +25,7 @@ jobs:
       - name: copy public folder
         run: cp -r public deploy/build/standalone
       - name: copy static folder
-        run: cp -r deploy/build/static deploy/build/standalone
+        run: cp -r deploy/build/static deploy/build/standalone/deploy/build
       - name: add CMS_API_TOKEN to .env file
         run: echo "CMS_API_TOKEN=${{ secrets.CMS_API_TOKEN }}" >> deploy/build/standalone/.env.production
       - name: rsync deployments
