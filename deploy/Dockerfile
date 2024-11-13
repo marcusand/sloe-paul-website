@@ -4,9 +4,6 @@ FROM node:18-alpine
 # Set working directory
 WORKDIR /app
 
-# Copy the rest of the application code
-COPY build/standalone/ ./
-
 # Set environment variable to production
 ENV NODE_ENV production
 

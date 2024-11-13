@@ -7,6 +7,8 @@ services:
       - traefik
     ports:
       - 8084:3000
+    volumes:
+      - ./build/standalone:/app
 
 networks:
   traefik:
