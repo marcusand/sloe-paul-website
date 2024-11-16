@@ -2,6 +2,7 @@ version: "3"
 services:
   sloe-frontend:
     build: .
+    user: 1000:1000
     container_name: sloe-frontend
     networks:
       - traefik
