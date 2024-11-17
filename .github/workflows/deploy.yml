@@ -45,4 +45,4 @@ jobs:
           ssh-keyscan -H ${{ secrets.DEPLOY_HOST }} >> ~/.ssh/known_hosts
       - name: Run Command on Remote Server
         run: |
-          ssh ${{ secrets.DEPLOY_USER }}@${{ secrets.DEPLOY_HOST }} "cd ~/projects/${{ github.event.repository.name }}; docker-compose up --build -d"
+          ssh ${{ secrets.DEPLOY_USER }}@${{ secrets.DEPLOY_HOST }} "cd ~/projects/${{ github.event.repository.name }}; docker-compose down; docker-compose up --build -d"
