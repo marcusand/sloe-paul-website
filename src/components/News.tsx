@@ -19,7 +19,7 @@ export const News: React.FC<Props> = ({ image, title, text }) => {
             src={getAssetUrl(image.id)}
             alt={`News header image for article: ${title}`}
             layout="fill"
-            objectFit="scale-down"
+            objectFit="contain"
             objectPosition="center center"
           />
         )}
