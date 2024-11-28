@@ -10,6 +10,7 @@ services:
       - 8084:3000
     volumes:
       - ./build/standalone:/app
+    restart: unless-stopped
 
 networks:
   traefik:
